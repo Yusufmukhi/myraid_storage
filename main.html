@@ -1,0 +1,1534 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Myriad Storage System LLP — Mobile Compactor Manufacturer India</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ═══════════════════════════════════════════
+   ROOT & RESET
+═══════════════════════════════════════════ */
+:root {
+  --navy:        #0b1628;
+  --navy-mid:    #132040;
+  --navy-light:  #1e3060;
+  --orange:      #f47c20;
+  --orange-lt:   #ff9a40;
+  --steel:       #8fa3bf;
+  --white:       #ffffff;
+  --off:         #f0f4f8;
+  --dim:         #a0b4cc;
+  --border:      rgba(143,163,191,.18);
+  --card:        rgba(19,32,64,.8);
+  --FD:          'Barlow Condensed', sans-serif;
+  --FB:          'Barlow', sans-serif;
+  --gutter:      clamp(20px,5vw,80px);
+  --max:         1280px;
+}
+*, *::before, *::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; }
+body { font-family:var(--FB); background:var(--navy); color:var(--white); overflow-x:hidden; line-height:1.6; }
+
+/* ═══════════════════════════════════════════
+   UTILITIES
+═══════════════════════════════════════════ */
+.wrap   { max-width:var(--max); margin:0 auto; padding:0 var(--gutter); }
+.accent { color:var(--orange); }
+.tag    {
+  display:inline-block; font-family:var(--FD); font-size:11px; font-weight:700;
+  letter-spacing:3px; text-transform:uppercase; color:var(--orange);
+  border:1px solid var(--orange); padding:4px 12px; margin-bottom:16px;
+}
+.sec { padding:clamp(60px,8vw,110px) 0; }
+.sec-hd { text-align:center; margin-bottom:clamp(40px,5vw,64px); }
+.sec-hd h2 {
+  font-family:var(--FD); font-size:clamp(34px,4.5vw,58px); font-weight:900;
+  line-height:1; letter-spacing:-.5px; text-transform:uppercase; margin-bottom:16px;
+}
+.sec-hd p { font-size:17px; color:var(--dim); max-width:600px; margin:0 auto; line-height:1.7; }
+.btn {
+  display:inline-flex; align-items:center; gap:10px;
+  font-family:var(--FD); font-size:15px; font-weight:700;
+  letter-spacing:1.5px; text-transform:uppercase;
+  padding:14px 32px; border:none; cursor:pointer;
+  text-decoration:none; transition:transform .2s, background .2s, border-color .2s;
+}
+.btn:hover { transform:translateY(-2px); }
+.btn-orange { background:var(--orange); color:var(--white); }
+.btn-orange:hover { background:var(--orange-lt); }
+.btn-outline { background:transparent; color:var(--white); border:2px solid rgba(255,255,255,.4); }
+.btn-outline:hover { border-color:var(--white); }
+.btn-white-solid { background:var(--white); color:var(--orange); }
+.btn-white-out { background:transparent; color:var(--white); border:2px solid rgba(255,255,255,.6); }
+.page { display:none; animation:fadeIn .4s ease; }
+.page.active { display:block; }
+@keyframes fadeIn { from{opacity:0;transform:translateY(12px)} to{opacity:1;transform:none} }
+
+/* reveal */
+.rv { opacity:0; transform:translateY(28px); transition:opacity .6s ease, transform .6s ease; }
+.rv.vis { opacity:1; transform:none; }
+.rv.d1 { transition-delay:.1s; } .rv.d2 { transition-delay:.2s; }
+.rv.d3 { transition-delay:.3s; } .rv.d4 { transition-delay:.4s; }
+
+/* ═══════════════════════════════════════════
+   TOPBAR
+═══════════════════════════════════════════ */
+.topbar {
+  background:var(--orange); padding:8px var(--gutter);
+  display:flex; justify-content:center; gap:32px; flex-wrap:wrap;
+  font-family:var(--FD); font-size:13px; font-weight:600; letter-spacing:1px;
+}
+.topbar a { color:var(--white); text-decoration:none; display:flex; align-items:center; gap:6px; }
+.topbar a:hover { opacity:.85; }
+
+/* ═══════════════════════════════════════════
+   NAV
+═══════════════════════════════════════════ */
+nav {
+  position:sticky; top:0; z-index:1000;
+  background:rgba(11,22,40,.97); backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border); padding:0 var(--gutter);
+}
+nav.scrolled { box-shadow:0 4px 30px rgba(0,0,0,.5); }
+.nav-i { max-width:var(--max); margin:0 auto; display:flex; align-items:center; justify-content:space-between; height:70px; }
+.logo { font-family:var(--FD); font-size:26px; font-weight:900; color:var(--white); text-decoration:none; cursor:pointer; }
+.logo span.dot { color:var(--orange); }
+.logo-sub { font-size:9px; font-weight:500; letter-spacing:3px; color:var(--steel); display:block; margin-top:-5px; text-transform:uppercase; }
+.nav-links { display:flex; list-style:none; gap:4px; align-items:center; }
+.nav-links li { position:relative; }
+.nav-links a {
+  color:var(--off); text-decoration:none; font-family:var(--FD);
+  font-size:13px; font-weight:600; letter-spacing:1px; text-transform:uppercase;
+  padding:8px 11px; transition:color .2s; cursor:pointer; white-space:nowrap;
+  display:flex; align-items:center; gap:4px;
+}
+.nav-links a:hover, .nav-links a.active { color:var(--orange); }
+.nav-links .has-drop:hover .drop { display:block; }
+.drop {
+  display:none; position:absolute; top:100%; left:0;
+  background:var(--navy-mid); border:1px solid var(--border);
+  min-width:220px; z-index:200; padding:8px 0;
+}
+.drop a {
+  display:block; padding:9px 18px; font-size:12px;
+  color:var(--dim); letter-spacing:.5px;
+}
+.drop a:hover { color:var(--orange); background:rgba(255,255,255,.03); }
+.drop-arrow { font-size:9px; opacity:.6; }
+.nav-cta { background:var(--orange); color:var(--white) !important; margin-left:8px; }
+.nav-cta:hover { background:var(--orange-lt); color:var(--white) !important; }
+.burger { display:none; flex-direction:column; gap:5px; cursor:pointer; }
+.burger span { display:block; width:24px; height:2px; background:var(--white); transition:all .3s; }
+.burger.open span:nth-child(1) { transform:rotate(45deg) translate(5px,5px); }
+.burger.open span:nth-child(2) { opacity:0; }
+.burger.open span:nth-child(3) { transform:rotate(-45deg) translate(5px,-5px); }
+.mob-menu { display:none; background:var(--navy-mid); border-top:1px solid var(--border); flex-direction:column; }
+.mob-menu.open { display:flex; }
+.mob-menu a {
+  color:var(--off); text-decoration:none; font-family:var(--FD); font-size:17px;
+  font-weight:600; letter-spacing:1px; text-transform:uppercase;
+  padding:13px var(--gutter); border-bottom:1px solid var(--border);
+  cursor:pointer; transition:color .2s;
+}
+.mob-menu a:hover { color:var(--orange); }
+.mob-menu .mob-cta { background:var(--orange); color:var(--white); text-align:center; border:none; margin:12px var(--gutter); }
+
+/* ═══════════════════════════════════════════
+   BREADCRUMB
+═══════════════════════════════════════════ */
+.breadcrumb {
+  background:var(--navy-mid); padding:14px var(--gutter);
+  border-bottom:1px solid var(--border);
+}
+.breadcrumb-i {
+  max-width:var(--max); margin:0 auto;
+  font-family:var(--FD); font-size:12px; letter-spacing:2px;
+  text-transform:uppercase; color:var(--steel);
+  display:flex; align-items:center; gap:8px;
+}
+.breadcrumb-i span.sep { color:var(--orange); }
+.breadcrumb-i span.cur { color:var(--white); }
+.breadcrumb-i a { color:var(--steel); text-decoration:none; cursor:pointer; }
+.breadcrumb-i a:hover { color:var(--orange); }
+
+/* ═══════════════════════════════════════════
+   PAGE HERO (inner pages)
+═══════════════════════════════════════════ */
+.pg-hero {
+  background:var(--navy-mid); padding:clamp(48px,6vw,80px) 0;
+  border-bottom:1px solid var(--border); position:relative; overflow:hidden;
+}
+.pg-hero::before {
+  content:''; position:absolute; top:0; left:0; right:0; height:3px;
+  background:linear-gradient(90deg, var(--orange), var(--orange-lt), var(--orange));
+}
+.pg-hero::after {
+  content:''; position:absolute; right:-100px; top:-100px;
+  width:400px; height:400px; border-radius:50%;
+  background:radial-gradient(circle, rgba(244,124,32,.07) 0%, transparent 70%);
+  pointer-events:none;
+}
+.pg-hero-i { position:relative; z-index:2; }
+.pg-hero h1 {
+  font-family:var(--FD); font-size:clamp(36px,5vw,68px); font-weight:900;
+  line-height:1; letter-spacing:-1px; text-transform:uppercase; margin-bottom:14px;
+}
+.pg-hero p { font-size:17px; color:var(--dim); max-width:640px; line-height:1.7; }
+
+/* ═══════════════════════════════════════════
+   HOME — HERO
+═══════════════════════════════════════════ */
+.hero {
+  position:relative; min-height:calc(100vh - 104px);
+  display:flex; align-items:center; overflow:hidden;
+  background:var(--navy); padding:clamp(60px,8vw,100px) 0;
+}
+.hero-bg {
+  position:absolute; inset:0;
+  background:
+    radial-gradient(ellipse 60% 70% at 70% 50%, rgba(244,124,32,.08) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 60% at 10% 80%, rgba(30,48,96,.6) 0%, transparent 60%);
+}
+.hero-grid {
+  position:absolute; inset:0;
+  background-image:
+    linear-gradient(rgba(143,163,191,.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(143,163,191,.04) 1px, transparent 1px);
+  background-size:60px 60px;
+}
+.hero-inner { position:relative; z-index:2; display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:center; }
+.hero-eyebrow {
+  font-family:var(--FD); font-size:12px; font-weight:700; letter-spacing:4px;
+  text-transform:uppercase; color:var(--orange); margin-bottom:20px;
+  display:flex; align-items:center; gap:12px;
+}
+.hero-eyebrow::before { content:''; display:block; width:40px; height:2px; background:var(--orange); }
+.hero h1 {
+  font-family:var(--FD); font-size:clamp(44px,6vw,80px); font-weight:900;
+  line-height:.95; letter-spacing:-1px; text-transform:uppercase; margin-bottom:24px;
+}
+.hero h1 em { font-style:normal; color:var(--orange); display:block; }
+.hero-desc { font-size:17px; color:var(--dim); line-height:1.7; margin-bottom:36px; max-width:480px; }
+.hero-actions { display:flex; gap:16px; flex-wrap:wrap; align-items:center; margin-bottom:48px; }
+.hero-trust { display:flex; align-items:center; gap:16px; font-family:var(--FD); font-size:12px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--steel); }
+.hero-trust::before { content:''; display:block; width:50px; height:1px; background:var(--border); }
+/* quote card */
+.qcard {
+  background:var(--card); border:1px solid var(--border); padding:36px;
+  backdrop-filter:blur(10px); width:100%; max-width:420px; position:relative;
+}
+.qcard::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--orange),var(--orange-lt)); }
+.qcard h3 { font-family:var(--FD); font-size:22px; font-weight:800; letter-spacing:1px; text-transform:uppercase; margin-bottom:6px; }
+.qcard p { font-size:13px; color:var(--dim); margin-bottom:20px; }
+.fg { margin-bottom:12px; }
+.fg input, .fg textarea, .fg select {
+  width:100%; background:rgba(255,255,255,.05); border:1px solid var(--border);
+  color:var(--white); padding:11px 14px; font-family:var(--FB); font-size:14px;
+  outline:none; transition:border-color .2s; border-radius:2px;
+}
+.fg input::placeholder, .fg textarea::placeholder { color:var(--dim); }
+.fg input:focus, .fg textarea:focus, .fg select:focus { border-color:var(--orange); }
+.fg textarea { resize:none; height:75px; }
+.fg select option { background:var(--navy-mid); }
+.fsub {
+  width:100%; background:var(--orange); color:var(--white);
+  font-family:var(--FD); font-size:15px; font-weight:700; letter-spacing:2px;
+  text-transform:uppercase; padding:14px; border:none; cursor:pointer;
+  transition:background .2s;
+}
+.fsub:hover { background:var(--orange-lt); }
+
+/* ═══════════════════════════════════════════
+   STATS STRIP
+═══════════════════════════════════════════ */
+.stats { background:var(--orange); }
+.stats-i { max-width:var(--max); margin:0 auto; display:grid; grid-template-columns:repeat(4,1fr); }
+.stat { padding:clamp(20px,3vw,36px); text-align:center; border-right:1px solid rgba(255,255,255,.2); display:flex; flex-direction:column; align-items:center; }
+.stat:last-child { border-right:none; }
+.stat-n { font-family:var(--FD); font-size:clamp(36px,5vw,60px); font-weight:900; color:var(--white); line-height:1; }
+.stat-l { font-family:var(--FD); font-size:12px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.8); margin-top:4px; }
+
+/* ═══════════════════════════════════════════
+   PRODUCTS SECTION (HOME)
+═══════════════════════════════════════════ */
+.prod-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:2px; }
+.pcard {
+  background:var(--navy); padding:38px 30px; position:relative;
+  transition:background .3s; cursor:pointer; overflow:hidden;
+}
+.pcard::after {
+  content:''; position:absolute; bottom:0; left:0; right:0; height:3px;
+  background:var(--orange); transform:scaleX(0); transform-origin:left; transition:transform .3s;
+}
+.pcard:hover { background:var(--navy-mid); }
+.pcard:hover::after { transform:scaleX(1); }
+.pnum { font-family:var(--FD); font-size:60px; font-weight:900; color:rgba(143,163,191,.08); line-height:1; position:absolute; top:16px; right:16px; pointer-events:none; }
+.picon { width:50px; height:50px; background:rgba(244,124,32,.1); border:1px solid rgba(244,124,32,.3); display:flex; align-items:center; justify-content:center; margin-bottom:18px; font-size:22px; }
+.pcard h3 { font-family:var(--FD); font-size:21px; font-weight:800; letter-spacing:.5px; text-transform:uppercase; margin-bottom:10px; }
+.pcard > p { font-size:13px; color:var(--dim); line-height:1.6; margin-bottom:18px; }
+.plist { list-style:none; display:flex; flex-direction:column; gap:6px; }
+.plist li { font-size:13px; color:var(--steel); display:flex; align-items:center; gap:8px; }
+.plist li::before { content:'→'; color:var(--orange); font-weight:700; flex-shrink:0; }
+.pcard .learn-more {
+  display:inline-flex; align-items:center; gap:6px;
+  font-family:var(--FD); font-size:12px; font-weight:700; letter-spacing:2px;
+  text-transform:uppercase; color:var(--orange); text-decoration:none;
+  margin-top:18px; border-bottom:1px solid rgba(244,124,32,.3);
+  padding-bottom:2px; transition:border-color .2s; cursor:pointer;
+}
+.pcard .learn-more:hover { border-color:var(--orange); }
+
+/* ═══════════════════════════════════════════
+   WHY CHOOSE (HOME)
+═══════════════════════════════════════════ */
+.why-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start; }
+.why-l h2 { font-family:var(--FD); font-size:clamp(34px,4vw,54px); font-weight:900; line-height:1; text-transform:uppercase; letter-spacing:-.5px; margin-bottom:18px; }
+.why-l p { font-size:16px; color:var(--dim); line-height:1.8; margin-bottom:28px; }
+.spec-tbl { border:1px solid var(--border); }
+.spec-row { display:grid; grid-template-columns:1fr 1.4fr; border-bottom:1px solid var(--border); }
+.spec-row:last-child { border-bottom:none; }
+.sk { padding:12px 18px; font-family:var(--FD); font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--steel); background:rgba(30,48,96,.3); border-right:1px solid var(--border); font-size:11px; }
+.sv { padding:12px 18px; color:var(--off); font-weight:500; font-size:14px; }
+.feat-grid { display:grid; grid-template-columns:1fr 1fr; gap:2px; }
+.feat {
+  background:var(--card); padding:26px 22px;
+  border:1px solid var(--border); transition:border-color .3s;
+}
+.feat:hover { border-color:rgba(244,124,32,.4); }
+.feat-icon { font-size:26px; margin-bottom:10px; display:block; }
+.feat h4 { font-family:var(--FD); font-size:15px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; margin-bottom:6px; }
+.feat p { font-size:13px; color:var(--dim); line-height:1.5; }
+
+/* ═══════════════════════════════════════════
+   ABOUT (HOME)
+═══════════════════════════════════════════ */
+.ab-grid { display:grid; grid-template-columns:1fr 1fr; gap:72px; align-items:center; }
+.ab-img { background:var(--navy-light); border:1px solid var(--border); aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+.ab-img-ph { display:flex; flex-direction:column; align-items:center; gap:12px; color:var(--dim); }
+.ab-img-ph .bi { font-size:72px; opacity:.18; }
+.ab-badge { position:absolute; bottom:-16px; right:-16px; background:var(--orange); padding:20px 24px; text-align:center; z-index:2; }
+.ab-badge .bn { font-family:var(--FD); font-size:44px; font-weight:900; line-height:1; color:var(--white); }
+.ab-badge .bl { font-family:var(--FD); font-size:10px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:rgba(255,255,255,.85); }
+.ab-c h2 { font-family:var(--FD); font-size:clamp(32px,3.5vw,50px); font-weight:900; line-height:1; text-transform:uppercase; letter-spacing:-.5px; margin-bottom:18px; }
+.ab-c p { font-size:15px; color:var(--dim); line-height:1.8; margin-bottom:14px; }
+.chips { display:flex; flex-wrap:wrap; gap:8px; margin:20px 0; }
+.chip { background:rgba(30,48,96,.6); border:1px solid var(--border); padding:5px 13px; font-family:var(--FD); font-size:11px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--steel); }
+.chip.hi { border-color:rgba(244,124,32,.4); color:var(--orange-lt); background:rgba(244,124,32,.08); }
+
+/* ═══════════════════════════════════════════
+   CLIENTS MARQUEE
+═══════════════════════════════════════════ */
+.marquee-wrap { overflow:hidden; margin-top:48px; }
+.track { display:flex; animation:marquee 32s linear infinite; width:max-content; }
+.track:hover { animation-play-state:paused; }
+@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+.cl-logo {
+  display:flex; align-items:center; justify-content:center;
+  padding:20px 40px; border-right:1px solid var(--border);
+  font-family:var(--FD); font-size:16px; font-weight:700;
+  letter-spacing:2px; text-transform:uppercase; color:var(--steel);
+  opacity:.65; transition:opacity .3s, color .3s; min-width:160px;
+}
+.cl-logo:hover { opacity:1; color:var(--orange); }
+
+/* ═══════════════════════════════════════════
+   REVIEWS
+═══════════════════════════════════════════ */
+.rev-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+.rcard {
+  background:var(--navy); border:1px solid var(--border);
+  padding:30px; position:relative; transition:border-color .3s;
+}
+.rcard:hover { border-color:rgba(244,124,32,.3); }
+.rcard::before { content:'"'; position:absolute; top:14px; right:22px; font-size:76px; font-family:Georgia,serif; color:rgba(244,124,32,.12); line-height:1; }
+.stars { color:var(--orange); font-size:13px; letter-spacing:2px; margin-bottom:14px; }
+.rtext { font-size:14px; color:var(--dim); line-height:1.7; margin-bottom:18px; }
+.reviewer { display:flex; align-items:center; gap:12px; }
+.rav { width:40px; height:40px; border-radius:50%; background:var(--orange); display:flex; align-items:center; justify-content:center; font-family:var(--FD); font-weight:800; font-size:16px; color:var(--white); flex-shrink:0; }
+.rname { font-family:var(--FD); font-size:15px; font-weight:700; color:var(--white); }
+.rmeta { font-size:12px; color:var(--steel); }
+
+/* ═══════════════════════════════════════════
+   FAQ
+═══════════════════════════════════════════ */
+.faq-grid { display:grid; grid-template-columns:1fr 1fr; gap:40px; }
+.faq-item { border-bottom:1px solid var(--border); padding-bottom:22px; margin-bottom:22px; }
+.faq-item:last-child { border-bottom:none; }
+.faq-q {
+  font-family:var(--FD); font-size:17px; font-weight:700;
+  letter-spacing:.3px; text-transform:uppercase; color:var(--white);
+  margin-bottom:0; cursor:pointer; display:flex; justify-content:space-between;
+  align-items:flex-start; gap:12px; user-select:none;
+}
+.faq-q .ft { color:var(--orange); font-size:20px; flex-shrink:0; }
+.faq-a { font-size:14px; color:var(--dim); line-height:1.7; margin-top:10px; display:none; }
+.faq-item.open .faq-a { display:block; }
+.faq-item.open .ft { transform:rotate(45deg); }
+
+/* ═══════════════════════════════════════════
+   CTA BANNER
+═══════════════════════════════════════════ */
+.cta-ban { background:var(--orange); padding:clamp(50px,6vw,80px) 0; position:relative; overflow:hidden; }
+.cta-ban::before {
+  content:'MYRIAD'; position:absolute; font-family:var(--FD); font-size:180px;
+  font-weight:900; color:rgba(255,255,255,.06); top:50%; left:50%;
+  transform:translate(-50%,-50%); white-space:nowrap; pointer-events:none;
+}
+.cta-i { position:relative; z-index:2; text-align:center; }
+.cta-i h2 { font-family:var(--FD); font-size:clamp(34px,5vw,66px); font-weight:900; text-transform:uppercase; letter-spacing:-1px; margin-bottom:14px; line-height:1; }
+.cta-i p { font-size:18px; color:rgba(255,255,255,.85); margin-bottom:34px; max-width:540px; margin-left:auto; margin-right:auto; }
+.cta-acts { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+
+/* ═══════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════ */
+footer { background:#060e1c; padding:clamp(50px,6vw,80px) 0 0; }
+.ft-grid { display:grid; grid-template-columns:2fr 1fr 1fr 1.1fr; gap:48px; margin-bottom:48px; }
+.ft-brand p { font-size:14px; color:var(--dim); line-height:1.7; margin:14px 0 22px; }
+.ft-social { display:flex; gap:10px; }
+.fsoc {
+  width:36px; height:36px; background:rgba(255,255,255,.05);
+  border:1px solid var(--border); display:flex; align-items:center; justify-content:center;
+  font-size:13px; text-decoration:none; color:var(--steel); transition:all .2s;
+}
+.fsoc:hover { background:var(--orange); border-color:var(--orange); color:var(--white); }
+.ft-col h4 { font-family:var(--FD); font-size:12px; font-weight:700; letter-spacing:3px; text-transform:uppercase; color:var(--white); margin-bottom:18px; padding-bottom:10px; border-bottom:1px solid var(--border); }
+.ft-col ul { list-style:none; display:flex; flex-direction:column; gap:9px; }
+.ft-col ul li a { font-size:14px; color:var(--dim); text-decoration:none; transition:color .2s; cursor:pointer; }
+.ft-col ul li a:hover { color:var(--orange); }
+.ft-ci { display:flex; gap:10px; margin-bottom:13px; font-size:14px; color:var(--dim); }
+.ft-ci .ico { color:var(--orange); flex-shrink:0; margin-top:2px; }
+.ft-ci a { color:var(--dim); text-decoration:none; }
+.ft-ci a:hover { color:var(--orange); }
+.ft-btm { border-top:1px solid var(--border); padding:18px 0; display:flex; justify-content:space-between; align-items:center; gap:16px; flex-wrap:wrap; }
+.ft-btm p { font-size:13px; color:var(--dim); }
+.ft-btm a { color:var(--orange); text-decoration:none; }
+.gst { font-family:var(--FD); font-size:11px; font-weight:600; letter-spacing:2px; text-transform:uppercase; color:var(--steel); background:rgba(255,255,255,.04); border:1px solid var(--border); padding:5px 11px; }
+
+/* ═══════════════════════════════════════════
+   WHATSAPP
+═══════════════════════════════════════════ */
+.wa { position:fixed; bottom:26px; right:26px; z-index:9999; display:flex; flex-direction:column; align-items:flex-end; gap:10px; }
+.wa-btn {
+  width:58px; height:58px; background:#25d366; border-radius:50%;
+  display:flex; align-items:center; justify-content:center;
+  text-decoration:none; box-shadow:0 4px 20px rgba(37,211,102,.4);
+  transition:transform .2s; animation:pulse-wa 2.5s infinite;
+}
+.wa-btn:hover { transform:scale(1.1); }
+@keyframes pulse-wa { 0%,100%{box-shadow:0 4px 20px rgba(37,211,102,.4)} 50%{box-shadow:0 4px 30px rgba(37,211,102,.7)} }
+.wa-lbl { background:var(--white); color:var(--navy); font-family:var(--FD); font-size:12px; font-weight:700; letter-spacing:1px; padding:5px 13px; box-shadow:0 2px 12px rgba(0,0,0,.2); white-space:nowrap; transition:opacity .3s; }
+
+/* ═══════════════════════════════════════════
+   ABOUT PAGE
+═══════════════════════════════════════════ */
+.about-full-grid { display:grid; grid-template-columns:1fr 1fr; gap:64px; align-items:start; }
+.timeline { border-left:2px solid var(--border); padding-left:28px; margin-top:32px; }
+.tl-item { position:relative; margin-bottom:28px; }
+.tl-item::before { content:''; position:absolute; left:-34px; top:4px; width:12px; height:12px; border-radius:50%; background:var(--orange); border:2px solid var(--navy-mid); }
+.tl-year { font-family:var(--FD); font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--orange); margin-bottom:4px; }
+.tl-item h4 { font-family:var(--FD); font-size:17px; font-weight:700; text-transform:uppercase; margin-bottom:4px; }
+.tl-item p { font-size:14px; color:var(--dim); line-height:1.6; }
+.cert-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:32px; }
+.cert-card { background:var(--card); border:1px solid var(--border); padding:24px; text-align:center; transition:border-color .3s; }
+.cert-card:hover { border-color:rgba(244,124,32,.4); }
+.cert-card .ci { font-size:36px; margin-bottom:10px; display:block; }
+.cert-card h4 { font-family:var(--FD); font-size:13px; font-weight:700; letter-spacing:1px; text-transform:uppercase; color:var(--white); margin-bottom:4px; }
+.cert-card p { font-size:12px; color:var(--dim); line-height:1.5; }
+.team-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; margin-top:32px; }
+.team-card { background:var(--card); border:1px solid var(--border); padding:24px; text-align:center; transition:border-color .3s; }
+.team-card:hover { border-color:rgba(244,124,32,.3); }
+.team-av { width:64px; height:64px; border-radius:50%; background:var(--orange); display:flex; align-items:center; justify-content:center; font-family:var(--FD); font-size:28px; font-weight:800; color:var(--white); margin:0 auto 14px; }
+.team-card h4 { font-family:var(--FD); font-size:15px; font-weight:700; text-transform:uppercase; letter-spacing:.5px; margin-bottom:2px; }
+.team-card p { font-size:12px; color:var(--dim); }
+.mission-grid { display:grid; grid-template-columns:1fr 1fr 1fr; gap:20px; }
+.mission-card { background:var(--card); border:1px solid var(--border); padding:32px 28px; }
+.mission-card .icon { font-size:32px; margin-bottom:14px; display:block; }
+.mission-card h3 { font-family:var(--FD); font-size:20px; font-weight:800; text-transform:uppercase; margin-bottom:10px; color:var(--white); }
+.mission-card p { font-size:14px; color:var(--dim); line-height:1.6; }
+
+/* ═══════════════════════════════════════════
+   PRODUCTS PAGE
+═══════════════════════════════════════════ */
+.prod-detail-grid { display:grid; grid-template-columns:1fr 1fr; gap:60px; align-items:start; }
+.prod-img { background:var(--navy-light); border:1px solid var(--border); aspect-ratio:4/3; display:flex; align-items:center; justify-content:center; }
+.prod-img .pi-ph { display:flex; flex-direction:column; align-items:center; gap:10px; color:var(--dim); }
+.prod-img .pi-ph .big { font-size:80px; opacity:.2; }
+.prod-info h2 { font-family:var(--FD); font-size:clamp(28px,3.5vw,46px); font-weight:900; line-height:1; text-transform:uppercase; letter-spacing:-.5px; margin-bottom:16px; }
+.prod-info p { font-size:15px; color:var(--dim); line-height:1.8; margin-bottom:14px; }
+.prod-apps { display:flex; flex-wrap:wrap; gap:8px; margin:18px 0; }
+.app-tag { background:rgba(30,48,96,.6); border:1px solid var(--border); padding:5px 13px; font-family:var(--FD); font-size:11px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--steel); }
+.prod-spec { border:1px solid var(--border); margin-top:20px; }
+.prod-spec .spec-row { grid-template-columns:1fr 1.5fr; }
+.variants-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:16px; margin-top:48px; }
+.var-card { background:var(--navy-mid); border:1px solid var(--border); padding:22px 18px; text-align:center; cursor:pointer; transition:border-color .3s, background .3s; }
+.var-card:hover, .var-card.sel { border-color:var(--orange); background:rgba(244,124,32,.06); }
+.var-card .vi { font-size:32px; margin-bottom:10px; display:block; }
+.var-card h4 { font-family:var(--FD); font-size:13px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; color:var(--white); }
+.ind-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:16px; margin-top:32px; }
+.ind-card { background:var(--card); border:1px solid var(--border); padding:20px; text-align:center; }
+.ind-card .ii { font-size:28px; margin-bottom:8px; display:block; }
+.ind-card p { font-family:var(--FD); font-size:12px; font-weight:600; letter-spacing:1px; text-transform:uppercase; color:var(--steel); }
+
+/* ═══════════════════════════════════════════
+   CASE STUDIES PAGE
+═══════════════════════════════════════════ */
+.cs-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:24px; }
+.cs-card { background:var(--card); border:1px solid var(--border); overflow:hidden; transition:border-color .3s; }
+.cs-card:hover { border-color:rgba(244,124,32,.4); }
+.cs-img { background:var(--navy-light); aspect-ratio:16/9; display:flex; align-items:center; justify-content:center; position:relative; overflow:hidden; }
+.cs-img-ph { display:flex; flex-direction:column; align-items:center; gap:8px; color:var(--dim); }
+.cs-img-ph .ci { font-size:48px; opacity:.25; }
+.cs-img-ph p { font-family:var(--FD); font-size:11px; letter-spacing:2px; text-transform:uppercase; }
+.cs-body { padding:28px; }
+.cs-tag { display:inline-block; background:rgba(244,124,32,.12); border:1px solid rgba(244,124,32,.3); color:var(--orange-lt); font-family:var(--FD); font-size:10px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:3px 10px; margin-bottom:12px; }
+.cs-body h3 { font-family:var(--FD); font-size:20px; font-weight:800; text-transform:uppercase; letter-spacing:.3px; margin-bottom:10px; }
+.cs-body p { font-size:14px; color:var(--dim); line-height:1.7; margin-bottom:16px; }
+.cs-meta { display:flex; gap:20px; flex-wrap:wrap; }
+.cs-mt { font-family:var(--FD); font-size:11px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:var(--steel); display:flex; align-items:center; gap:5px; }
+.cs-mt span { color:var(--orange); font-size:14px; }
+.cs-result { display:grid; grid-template-columns:repeat(3,1fr); gap:16px; margin-top:16px; }
+.cs-res-item { background:rgba(30,48,96,.4); border:1px solid var(--border); padding:14px; text-align:center; }
+.cs-res-item .rn { font-family:var(--FD); font-size:28px; font-weight:900; color:var(--orange); }
+.cs-res-item .rl { font-family:var(--FD); font-size:10px; font-weight:600; letter-spacing:1.5px; text-transform:uppercase; color:var(--dim); margin-top:2px; }
+
+/* ═══════════════════════════════════════════
+   CONTACT PAGE
+═══════════════════════════════════════════ */
+.contact-grid { display:grid; grid-template-columns:1fr 1.2fr; gap:56px; }
+.contact-info h3 { font-family:var(--FD); font-size:clamp(28px,3vw,40px); font-weight:900; text-transform:uppercase; letter-spacing:-.5px; margin-bottom:14px; line-height:1; }
+.contact-info p { font-size:15px; color:var(--dim); line-height:1.8; margin-bottom:28px; }
+.c-item { display:flex; gap:16px; margin-bottom:22px; align-items:flex-start; }
+.c-item .ico { width:44px; height:44px; background:rgba(244,124,32,.1); border:1px solid rgba(244,124,32,.3); display:flex; align-items:center; justify-content:center; font-size:18px; flex-shrink:0; }
+.c-item-text h4 { font-family:var(--FD); font-size:13px; font-weight:700; letter-spacing:2px; text-transform:uppercase; color:var(--steel); margin-bottom:3px; }
+.c-item-text p, .c-item-text a { font-size:15px; color:var(--white); text-decoration:none; line-height:1.5; }
+.c-item-text a:hover { color:var(--orange); }
+.contact-form { background:var(--card); border:1px solid var(--border); padding:40px; position:relative; }
+.contact-form::before { content:''; position:absolute; top:0; left:0; right:0; height:3px; background:linear-gradient(90deg,var(--orange),var(--orange-lt)); }
+.contact-form h3 { font-family:var(--FD); font-size:24px; font-weight:800; text-transform:uppercase; margin-bottom:6px; }
+.contact-form p { font-size:14px; color:var(--dim); margin-bottom:24px; }
+.fg-2 { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.map-wrap { background:var(--navy-light); border:1px solid var(--border); height:280px; display:flex; align-items:center; justify-content:center; margin-top:32px; }
+.map-wrap p { color:var(--dim); font-family:var(--FD); letter-spacing:2px; text-transform:uppercase; font-size:13px; }
+.offices-grid { display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-top:32px; }
+.office-card { background:var(--card); border:1px solid var(--border); padding:28px; }
+.office-card h4 { font-family:var(--FD); font-size:16px; font-weight:700; text-transform:uppercase; letter-spacing:1px; margin-bottom:12px; color:var(--orange); display:flex; align-items:center; gap:8px; }
+.office-card p { font-size:14px; color:var(--dim); line-height:1.7; }
+
+/* ═══════════════════════════════════════════
+   CLIENTS PAGE
+═══════════════════════════════════════════ */
+.industry-tabs { display:flex; gap:8px; flex-wrap:wrap; margin-bottom:32px; }
+.itab { font-family:var(--FD); font-size:12px; font-weight:700; letter-spacing:2px; text-transform:uppercase; padding:8px 18px; border:1px solid var(--border); color:var(--steel); background:transparent; cursor:pointer; transition:all .2s; }
+.itab.active, .itab:hover { border-color:var(--orange); color:var(--orange); background:rgba(244,124,32,.06); }
+.clients-full-grid { display:grid; grid-template-columns:repeat(5,1fr); gap:12px; }
+.cl-card { background:var(--card); border:1px solid var(--border); padding:24px 16px; text-align:center; transition:border-color .3s; }
+.cl-card:hover { border-color:rgba(244,124,32,.3); }
+.cl-card .cla { width:52px; height:52px; border-radius:50%; background:var(--navy-light); display:flex; align-items:center; justify-content:center; font-family:var(--FD); font-size:22px; font-weight:800; color:var(--orange); margin:0 auto 12px; border:1px solid var(--border); }
+.cl-card h4 { font-family:var(--FD); font-size:13px; font-weight:700; letter-spacing:.5px; text-transform:uppercase; color:var(--white); margin-bottom:3px; }
+.cl-card p { font-size:11px; color:var(--dim); }
+.cl-highlight { border-color:rgba(244,124,32,.3); background:rgba(244,124,32,.04); }
+.cl-highlight .cla { background:rgba(244,124,32,.15); border-color:rgba(244,124,32,.3); }
+
+/* ═══════════════════════════════════════════
+   DIVIDERS
+═══════════════════════════════════════════ */
+.divider { height:1px; background:linear-gradient(90deg,transparent,var(--border),transparent); }
+.space { margin-top:60px; }
+
+/* ═══════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════ */
+@media(max-width:1024px){
+  .ft-grid{grid-template-columns:1fr 1fr;gap:32px}
+  .prod-grid{grid-template-columns:repeat(2,1fr)}
+  .rev-grid{grid-template-columns:repeat(2,1fr)}
+  .variants-grid{grid-template-columns:repeat(3,1fr)}
+  .team-grid{grid-template-columns:repeat(2,1fr)}
+  .clients-full-grid{grid-template-columns:repeat(4,1fr)}
+  .cert-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .nav-links{display:none}.burger{display:flex}
+  .hero-inner,.ab-grid,.why-grid,.about-full-grid,.prod-detail-grid,.contact-grid,.cs-grid,.mission-grid{grid-template-columns:1fr;gap:40px}
+  .stats-i{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-right:none}
+  .stat:nth-child(3){border-top:1px solid rgba(255,255,255,.2)}
+  .prod-grid{grid-template-columns:1fr}
+  .faq-grid{grid-template-columns:1fr}
+  .rev-grid{grid-template-columns:1fr}
+  .ft-grid{grid-template-columns:1fr;gap:28px}
+  .ft-btm{flex-direction:column;text-align:center}
+  .variants-grid{grid-template-columns:repeat(2,1fr)}
+  .ind-grid{grid-template-columns:repeat(2,1fr)}
+  .team-grid{grid-template-columns:1fr 1fr}
+  .clients-full-grid{grid-template-columns:repeat(2,1fr)}
+  .fg-2{grid-template-columns:1fr}
+  .offices-grid{grid-template-columns:1fr}
+  .cs-result{grid-template-columns:1fr 1fr 1fr}
+  .ab-badge{position:static;margin-top:12px;width:fit-content}
+  .feat-grid{grid-template-columns:1fr}
+}
+@media(max-width:480px){
+  .topbar{gap:14px;font-size:11px}
+  .hero-actions,.cta-acts{flex-direction:column;align-items:flex-start}
+  .cta-acts{align-items:center}
+  .prod-grid{grid-template-columns:1fr}
+  .clients-full-grid{grid-template-columns:repeat(2,1fr)}
+  .cert-grid,.mission-grid{grid-template-columns:1fr}
+  .cs-result{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+
+<!-- TOPBAR -->
+<div class="topbar">
+  <a href="tel:+919769377043">📞 +91 97693 77043</a>
+  <a href="mailto:info@myriadstoragesystem.com">✉️ info@myriadstoragesystem.com</a>
+  <a href="#" onclick="nav('contact')">📍 Jogeshwari, Mumbai · Factory: Vasai</a>
+</div>
+
+<!-- NAV -->
+<nav id="mainNav">
+  <div class="nav-i">
+    <a class="logo" onclick="nav('home')">
+      MYRIAD<span class="dot">.</span>
+      <span class="logo-sub">Storage System LLP</span>
+    </a>
+    <ul class="nav-links">
+      <li><a id="nl-home" onclick="nav('home')" class="active">Home</a></li>
+      <li class="has-drop">
+        <a id="nl-about" onclick="nav('about')">About Us <span class="drop-arrow">▾</span></a>
+        <div class="drop">
+          <a onclick="nav('about')">About Myriad</a>
+          <a onclick="nav('certifications')">Our Certifications</a>
+          <a onclick="nav('clients')">Our Clients</a>
+        </div>
+      </li>
+      <li class="has-drop">
+        <a id="nl-products" onclick="nav('products')">Products <span class="drop-arrow">▾</span></a>
+        <div class="drop">
+          <a onclick="navProduct('compactors')">Mobile Compactors</a>
+          <a onclick="navProduct('racking')">Industrial Racking</a>
+          <a onclick="navProduct('almirah')">Almirah & Storage</a>
+          <a onclick="navProduct('lockers')">Storage Lockers</a>
+          <a onclick="navProduct('furniture')">Office Furniture</a>
+        </div>
+      </li>
+      <li><a id="nl-casestudy" onclick="nav('casestudy')">Case Studies</a></li>
+      <li><a id="nl-clients" onclick="nav('clients')">Clients</a></li>
+      <li><a id="nl-contact" onclick="nav('contact')">Contact</a></li>
+      <li><a class="nav-cta" onclick="nav('contact')">Get Free Quote</a></li>
+    </ul>
+    <div class="burger" id="burger" onclick="toggleBurger()">
+      <span></span><span></span><span></span>
+    </div>
+  </div>
+  <div class="mob-menu" id="mobMenu">
+    <a onclick="nav('home');toggleBurger()">Home</a>
+    <a onclick="nav('about');toggleBurger()">About Us</a>
+    <a onclick="nav('products');toggleBurger()">Products</a>
+    <a onclick="nav('casestudy');toggleBurger()">Case Studies</a>
+    <a onclick="nav('clients');toggleBurger()">Clients</a>
+    <a onclick="nav('contact');toggleBurger()">Contact</a>
+    <a class="mob-cta" onclick="nav('contact');toggleBurger()">Get Free Quote →</a>
+  </div>
+</nav>
+
+<!-- ══════════════════════════════════════════
+     HOME PAGE
+═══════════════════════════════════════════ -->
+<div id="page-home" class="page active">
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-grid"></div>
+    <div class="wrap">
+      <div class="hero-inner">
+        <div class="rv">
+          <div class="hero-eyebrow">Est. 2018 · Mumbai, India</div>
+          <h1>India's Trusted<em>Compactor</em>Storage Experts</h1>
+          <p class="hero-desc">High-density mobile compactor systems saving up to 70% floor space. Custom-engineered for offices, warehouses, hospitals & industries. Trusted by ISRO, Tata, SBI & 500+ clients.</p>
+          <div class="hero-actions">
+            <a onclick="nav('contact')" class="btn btn-orange">Get Free Quote →</a>
+            <a onclick="nav('products')" class="btn btn-outline">Explore Products</a>
+          </div>
+          <div class="hero-trust">Trusted by India's Leading Organizations</div>
+        </div>
+        <div class="rv d2">
+          <div class="qcard">
+            <h3>Quick Enquiry</h3>
+            <p>Receive a customised quote within 24 hours</p>
+            <div class="fg"><input type="text" placeholder="Your Full Name *"></div>
+            <div class="fg"><input type="email" placeholder="Email Address *"></div>
+            <div class="fg"><input type="tel" placeholder="Phone Number *"></div>
+            <div class="fg">
+              <select>
+                <option value="" disabled selected>Product Interested In</option>
+                <option>Mobile Compactor Storage</option>
+                <option>Industrial Racking</option>
+                <option>Almirah & Storage Units</option>
+                <option>Storage Lockers</option>
+                <option>Office Furniture</option>
+                <option>Custom Solution</option>
+              </select>
+            </div>
+            <div class="fg"><textarea placeholder="Describe your storage requirement..."></textarea></div>
+            <button class="fsub" onclick="alert('Thank you! We will contact you within 24 hours.')">Send Enquiry →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stats-i">
+      <div class="stat"><div class="stat-n" data-target="500">0</div><div class="stat-l">Happy Clients +</div></div>
+      <div class="stat"><div class="stat-n" data-target="1000">0</div><div class="stat-l">Installations +</div></div>
+      <div class="stat"><div class="stat-n" data-target="6">0</div><div class="stat-l">Years Experience +</div></div>
+      <div class="stat"><div class="stat-n" data-target="25">0</div><div class="stat-l">States Served +</div></div>
+    </div>
+  </div>
+
+  <!-- Products Overview -->
+  <section class="sec" style="background:var(--navy-mid)">
+    <div class="wrap">
+      <div class="sec-hd rv"><div class="tag">Our Products</div><h2>Complete Range of <span class="accent">Industrial Storage</span></h2><p>From mobile compactors to office furniture — engineered for durability, customised for your space.</p></div>
+      <div class="prod-grid">
+        <div class="pcard rv" onclick="navProduct('compactors')">
+          <div class="pnum">01</div>
+          <div class="picon">🗂</div>
+          <h3>Mobile Compactors</h3>
+          <p>High-density movable rack systems eliminating fixed aisles, saving up to 70% floor space.</p>
+          <ul class="plist">
+            <li>Heavy-Duty Compactors</li><li>File Compactor Storage</li>
+            <li>Perforated Storage</li><li>Manual Push-Pull Compactors</li><li>Library Compactors</li>
+          </ul>
+          <span class="learn-more">Learn More →</span>
+        </div>
+        <div class="pcard rv d1" onclick="navProduct('racking')">
+          <div class="pnum">02</div>
+          <div class="picon">🏭</div>
+          <h3>Industrial Racking</h3>
+          <p>Heavy-duty racking designed for warehouses, factories and distribution centres.</p>
+          <ul class="plist"><li>Heavy-Duty Storage Racks</li><li>Pallet Racking Systems</li><li>Mezzanine Storage Systems</li></ul>
+          <span class="learn-more">Learn More →</span>
+        </div>
+        <div class="pcard rv d2" onclick="navProduct('almirah')">
+          <div class="pnum">03</div>
+          <div class="picon">🚪</div>
+          <h3>Almirah & Storage</h3>
+          <p>Powder-coated metal almirahs for organized, secure storage in offices and institutions.</p>
+          <ul class="plist"><li>Glass Door Almirah</li><li>Storewell Almirah</li><li>Custom Storage Units</li></ul>
+          <span class="learn-more">Learn More →</span>
+        </div>
+        <div class="pcard rv" onclick="navProduct('lockers')">
+          <div class="pnum">04</div>
+          <div class="picon">🔐</div>
+          <h3>Storage Lockers</h3>
+          <p>Secure multi-compartment lockers for staff, industrial, gym and institutional use.</p>
+          <ul class="plist"><li>Industrial Lockers</li><li>Staff & Gym Lockers</li><li>Mobile / Phone Lockers</li></ul>
+          <span class="learn-more">Learn More →</span>
+        </div>
+        <div class="pcard rv d1" onclick="navProduct('furniture')">
+          <div class="pnum">05</div>
+          <div class="picon">🪑</div>
+          <h3>Office Furniture</h3>
+          <p>Ergonomic, modular office furniture for modern workspaces, labs and conference rooms.</p>
+          <ul class="plist"><li>Modular Workstations</li><li>Executive & Conference Tables</li><li>Lab Furniture</li></ul>
+          <span class="learn-more">Learn More →</span>
+        </div>
+        <div class="pcard rv d2" style="background:rgba(244,124,32,.05);border:1px solid rgba(244,124,32,.2)" onclick="nav('contact')">
+          <div class="pnum" style="color:rgba(244,124,32,.15)">✦</div>
+          <div class="picon" style="background:rgba(244,124,32,.12);border-color:rgba(244,124,32,.4)">📐</div>
+          <h3>Custom Solutions</h3>
+          <p>Every space is unique. We engineer bespoke systems from floor plan to installation.</p>
+          <ul class="plist"><li>Site Survey & CAD Design</li><li>Custom Fabrication</li><li>Pan-India Installation</li><li>Post-Installation Support</li></ul>
+          <span class="learn-more">Contact Us →</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose -->
+  <section class="sec" style="background:var(--navy)">
+    <div class="wrap">
+      <div class="why-grid">
+        <div class="rv">
+          <div class="tag">Why Myriad</div>
+          <h2 class="why-l" style="font-family:var(--FD);font-size:clamp(34px,4vw,54px);font-weight:900;line-height:1;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:18px">Built Tough.<br>Designed <span class="accent">Smart.</span></h2>
+          <p style="font-size:16px;color:var(--dim);line-height:1.8;margin-bottom:28px">Precision CRCA steel construction, smooth ball-bearing rails, and custom powder-coat finishes. Every unit is built to last decades and designed for your specific space.</p>
+          <a onclick="nav('contact')" class="btn btn-orange">Request Consultation →</a>
+          <div class="spec-tbl" style="margin-top:28px">
+            <div class="spec-row"><div class="sk">Material</div><div class="sv">CRCA Steel Sheets</div></div>
+            <div class="spec-row"><div class="sk">Surface</div><div class="sv">Powder Coated (Custom Colors)</div></div>
+            <div class="spec-row"><div class="sk">Space Saving</div><div class="sv">Up to 60–70% Floor Area</div></div>
+            <div class="spec-row"><div class="sk">Applications</div><div class="sv">Banks, Hospitals, Defence, Railways</div></div>
+            <div class="spec-row"><div class="sk">Warranty</div><div class="sv">1 Year on Material Defects</div></div>
+            <div class="spec-row"><div class="sk">Delivery</div><div class="sv">PAN India Supply & Installation</div></div>
+          </div>
+        </div>
+        <div class="rv d2">
+          <div class="feat-grid">
+            <div class="feat"><span class="feat-icon">🏗</span><h4>Premium Steel Build</h4><p>CRCA steel with anti-corrosion powder coating for decades of reliable performance.</p></div>
+            <div class="feat"><span class="feat-icon">📐</span><h4>Custom Designed</h4><p>Each system designed based on your floor plan, load requirements and storage needs.</p></div>
+            <div class="feat"><span class="feat-icon">⚙️</span><h4>Smooth Operation</h4><p>Ball-bearing rail systems ensure effortless manual and mechanical operation.</p></div>
+            <div class="feat"><span class="feat-icon">🚚</span><h4>Pan-India Delivery</h4><p>Factory-direct supply and professional installation across all Indian states.</p></div>
+            <div class="feat"><span class="feat-icon">💰</span><h4>Competitive Pricing</h4><p>Manufacturer-direct — no middlemen — giving you the best value for money.</p></div>
+            <div class="feat"><span class="feat-icon">🛡</span><h4>Quality Certified</h4><p>Registered trademark with compliance to industrial safety and quality standards.</p></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About snippet -->
+  <section class="sec" style="background:var(--navy-mid)">
+    <div class="wrap">
+      <div class="ab-grid">
+        <div class="rv" style="position:relative">
+          <div class="ab-img">
+            <div class="ab-img-ph"><div class="bi">🏭</div><p style="font-family:var(--FD);letter-spacing:2px;text-transform:uppercase;font-size:13px">Manufacturing Facility</p></div>
+          </div>
+          <div class="ab-badge"><div class="bn">500+</div><div class="bl">Happy Clients</div></div>
+        </div>
+        <div class="ab-c rv d2">
+          <div class="tag">About Us</div>
+          <h2>Mumbai's Leading Storage Manufacturer</h2>
+          <p>Established in 2018, Myriad Storage System LLP is headquartered in Jogeshwari, Mumbai with our manufacturing facility in Vasai, Palghar. We specialize in high-quality mobile compactor storage systems saving up to 70% floor space.</p>
+          <p>From ISRO's record archives to Tata's warehouses and SBI's document centers — our systems are deployed where reliability and precision are non-negotiable.</p>
+          <div class="chips">
+            <span class="chip hi">ISRO</span><span class="chip hi">Tata Group</span>
+            <span class="chip hi">SBI</span><span class="chip hi">L&T</span>
+            <span class="chip">BEL</span><span class="chip">MMRC</span>
+            <span class="chip">JSW</span><span class="chip">ISKCON</span>
+            <span class="chip">Hikvision</span><span class="chip">TVS</span>
+          </div>
+          <a onclick="nav('about')" class="btn btn-orange">Read Our Full Story →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Clients marquee -->
+  <section class="sec" style="background:var(--navy)">
+    <div class="wrap">
+      <div class="sec-hd rv"><div class="tag">Our Clients</div><h2>Trusted by <span class="accent">India's Best</span></h2><p>From ISRO & DRDO to hospitals, universities and Fortune 500 companies.</p></div>
+    </div>
+    <div class="marquee-wrap">
+      <div class="track">
+        <div class="cl-logo">ISRO</div><div class="cl-logo">TATA Group</div><div class="cl-logo">SBI</div>
+        <div class="cl-logo">L&T</div><div class="cl-logo">JSW Steel</div><div class="cl-logo">BEL</div>
+        <div class="cl-logo">MMRC</div><div class="cl-logo">Hikvision</div><div class="cl-logo">TVS</div>
+        <div class="cl-logo">ISKCON</div><div class="cl-logo">Waaree</div><div class="cl-logo">HP</div>
+        <div class="cl-logo">DY Patil</div><div class="cl-logo">Murugappa</div><div class="cl-logo">V-Guard</div>
+        <div class="cl-logo">Woxsen Univ.</div><div class="cl-logo">Vikrant Univ.</div><div class="cl-logo">CIDCO</div>
+        <!-- duplicate -->
+        <div class="cl-logo">ISRO</div><div class="cl-logo">TATA Group</div><div class="cl-logo">SBI</div>
+        <div class="cl-logo">L&T</div><div class="cl-logo">JSW Steel</div><div class="cl-logo">BEL</div>
+        <div class="cl-logo">MMRC</div><div class="cl-logo">Hikvision</div><div class="cl-logo">TVS</div>
+        <div class="cl-logo">ISKCON</div><div class="cl-logo">Waaree</div><div class="cl-logo">HP</div>
+        <div class="cl-logo">DY Patil</div><div class="cl-logo">Murugappa</div><div class="cl-logo">V-Guard</div>
+        <div class="cl-logo">Woxsen Univ.</div><div class="cl-logo">Vikrant Univ.</div><div class="cl-logo">CIDCO</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Reviews -->
+  <section class="sec" style="background:var(--navy-mid)">
+    <div class="wrap">
+      <div class="sec-hd rv"><div class="tag">Client Reviews</div><h2><span class="accent">4.9★</span> on Google · 91 Reviews</h2><p>Real feedback from real organizations who trust Myriad for their critical storage needs.</p></div>
+      <div class="rev-grid">
+        <div class="rcard rv"><div class="stars">★★★★★</div><p class="rtext">The quality of storage systems is highly impressive — sturdy construction, smooth functionality, and efficient space utilization. The compactors have significantly improved our records management.</p><div class="reviewer"><div class="rav">R</div><div><div class="rname">Rakesh Rathore</div><div class="rmeta">University Administrator · Google Review</div></div></div></div>
+        <div class="rcard rv d1"><div class="stars">★★★★★</div><p class="rtext">Extremely pleased with service and outstanding support. Professional, high-quality work completed on time. Special thanks to Ms. Deepti for her quick response and dedication throughout.</p><div class="reviewer"><div class="rav">S</div><div><div class="rname">Sharad Patil</div><div class="rmeta">Project Manager · Google Review</div></div></div></div>
+        <div class="rcard rv d2"><div class="stars">★★★★★</div><p class="rtext">Very professional service. We purchased 3 optimisers — on-time delivery and installation. Five stars for support and service. Strongly recommended for anyone looking for storage solutions.</p><div class="reviewer"><div class="rav">K</div><div><div class="rname">Kunal Dawane</div><div class="rmeta">Procurement Lead · Google Review</div></div></div></div>
+        <div class="rcard rv"><div class="stars">★★★★★</div><p class="rtext">Requirement understood perfectly on call. Customized design offered in no time. Product is amazing and perfectly serves the purpose. Highly recommend Myriad Storage System.</p><div class="reviewer"><div class="rav">A</div><div><div class="rname">Anupam Savale</div><div class="rmeta">Business Owner · Google Review</div></div></div></div>
+        <div class="rcard rv d1"><div class="stars">★★★★★</div><p class="rtext">Good experience dealing with Myriad. Professional and skilled staff. Product quality meets expectations. Would work with them again for future storage projects.</p><div class="reviewer"><div class="rav">N</div><div><div class="rname">Naser Khan</div><div class="rmeta">Facilities Manager · Google Review</div></div></div></div>
+        <div class="rcard rv d2"><div class="stars">★★★★★</div><p class="rtext">Timely response and commitment to quality truly stands out. Ms. Deepti's coordination ensured everything moved smoothly. Highly recommended for reliable, great-quality storage solutions.</p><div class="reviewer"><div class="rav">D</div><div><div class="rname">Deepak Kumar</div><div class="rmeta">Operations Manager · Google Review</div></div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="sec" style="background:var(--navy)">
+    <div class="wrap">
+      <div class="sec-hd rv"><div class="tag">FAQ</div><h2>Common <span class="accent">Questions</span></h2><p>Everything you need to know about mobile compactor storage systems and our solutions.</p></div>
+      <div class="faq-grid">
+        <div>
+          <div class="faq-item rv"><div class="faq-q">What is a mobile compactor storage system? <span class="ft">+</span></div><div class="faq-a">A mobile compactor is a high-density storage solution using movable racks on rails — eliminating fixed aisles and saving up to 70% floor space. Used in offices, warehouses, banks, and hospitals across India.</div></div>
+          <div class="faq-item rv d1"><div class="faq-q">How much space can a compactor save? <span class="ft">+</span></div><div class="faq-a">Our mobile compactor systems can save 60–70% of floor space by removing unnecessary fixed aisles, allowing you to store significantly more in the same footprint.</div></div>
+          <div class="faq-item rv d2"><div class="faq-q">What industries use mobile compactors? <span class="ft">+</span></div><div class="faq-a">Banks, hospitals, government offices, warehouses, factories, libraries, defence establishments, railways and educational institutions all benefit from mobile compactor systems.</div></div>
+          <div class="faq-item rv d3"><div class="faq-q">What warranty do you provide? <span class="ft">+</span></div><div class="faq-a">We provide a 1-year warranty against material defects on all storage systems. Terms may vary based on product type and project scale.</div></div>
+        </div>
+        <div>
+          <div class="faq-item rv"><div class="faq-q">What is the price of a mobile compactor? <span class="ft">+</span></div><div class="faq-a">Price depends on size, material specifications and customization. We provide detailed customized quotes after understanding your space and needs — at no charge.</div></div>
+          <div class="faq-item rv d1"><div class="faq-q">Do you offer pan-India delivery and installation? <span class="ft">+</span></div><div class="faq-a">Yes. Myriad provides full PAN India supply, delivery and professional installation — from initial site survey to final handover.</div></div>
+          <div class="faq-item rv d2"><div class="faq-q">Are systems customizable in size and color? <span class="ft">+</span></div><div class="faq-a">Absolutely. All our storage systems can be fully customized in dimensions, load capacity and powder-coat color to match your requirements.</div></div>
+          <div class="faq-item rv d3"><div class="faq-q">How long does installation take? <span class="ft">+</span></div><div class="faq-a">Installation time depends on project size and complexity. Most standard installations complete within a few days. Our team provides a timeline estimate at the quotation stage.</div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Banner -->
+  <div class="cta-ban">
+    <div class="wrap">
+      <div class="cta-i rv">
+        <h2>Ready to Maximize<br>Your Storage Space?</h2>
+        <p>Free consultation and customized quote within 24 hours. Site survey available across India.</p>
+        <div class="cta-acts">
+          <a onclick="nav('contact')" class="btn btn-white-solid">Get Free Quote →</a>
+          <a href="tel:+919769377043" class="btn btn-white-out">📞 Call Us Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     ABOUT PAGE
+═══════════════════════════════════════════ -->
+<div id="page-about" class="page">
+  <div class="breadcrumb"><div class="breadcrumb-i"><a onclick="nav('home')">Home</a><span class="sep">›</span><span class="cur">About Us</span></div></div>
+  <div class="pg-hero"><div class="wrap pg-hero-i"><div class="tag">Our Story</div><h1>About Myriad<br><span class="accent">Storage System</span></h1><p>Mumbai's trusted manufacturer of high-density industrial storage solutions since 2018. Built on precision engineering and a relentless commitment to quality.</p></div></div>
+  
+  <!-- Mission, Vision, Values -->
+  <section class="sec" style="background:var(--navy)">
+    <div class="wrap">
+      <div class="sec-hd rv"><div class="tag">Who We Are</div><h2>Our <span class="accent">Mission & Values</span></h2></div>
+      <div class="mission-grid">
+        <div class="mission-card rv"><span class="icon">🎯</span><h3>Our Mission</h3><p>To deliver innovative, high-quality storage solutions that maximize space efficiency and exceed customer expectations — engineered for performance and built for the long run.</p></div>
+        <div class="mission-card rv d1"><span class="icon">🔭</span><h3>Our Vision</h3><p>To become India's most trusted manufacturer of industrial storage systems, expanding our footprint from Mumbai to every corner of the country and beyond.</p></div>
+        <div class="mission-card rv d2"><span class="icon">💎</span><h3>Our Values</h3><p>Quality without compromise. Customer satisfaction first. Innovation in every design. Integrity in every deal. Reliability from enquiry to installation.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Full Story + Timeline -->
+  <section class="sec" style="background:var(--navy-mid)">
+    <div class="wrap">
+      <div class="about-full-grid">
+        <div class="rv">
+          <div class="tag">Our Journey</div>
+          <h2 style="font-family:var(--FD);font-size:clamp(30px,3.5vw,48px);font-weight:900;line-height:1;text-transform:uppercase;letter-spacing:-.5px;margin-bottom:18px">Engineering Smart<br>Storage <span class="accent">Since 2018</span></h2>
+          <p style="font-size:15px;color:var(--dim);line-height:1.8">Myriad Storage System LLP was founded with a clear vision — to go beyond conventional manufacturing by delivering innovative and customized storage systems designed for modern businesses.</p>
+          <p style="font-size:15px;color:var(--dim);line-height:1.8;margin-top:12px">Headquartered in Jogeshwari, Mumbai, with our manufacturing facility at Vasai, Palghar, we combine precision engineering with deep customer understanding to deliver solutions that truly transform how organizations manage space.</p>
+          <p style="font-size:15px;color:var(--dim);line-height:1.8;margin-top:12px">Today, with 500+ completed installations and a 4.9-star Google rating, we are proud to serve India's most respected institutions — from ISRO and DRDO to SBI, Tata, and hundreds of hospitals, universities and corporate offices.</p>
+          <div class="timeline">
+            <div class="tl-item"><div class="tl-year">2018</div><h4>Founded in Mumbai</h4><p>Myriad Storage System LLP established with a focus on mobile compactor manufacturing.</p></div>
+            <div class="tl-item"><div class="tl-year">2019–20</div><h4>First Major Contracts</h4><p>Won contracts with leading banks and government institutions across Maharashtra.</p></div>
+            <div class="tl-item"><div class="tl-year">2021–22</div><h4>PAN India Expansion</h4><p>Extended delivery and installation network to 25+ states across India.</p></div>
+            <div class="tl-item"><div class="tl-year">2023</div><h4>Premium Client Milestones</h4><p>Completed installations for ISRO, Tata Projects, JSW and multiple defence clients.</p></div>
+            <div class="tl-item"><div class="tl-year">2024–25</div><h4>500+ Clients Milestone</h4><p>Crossed 500+ happy clients and 1,000+ successful installations across India.</p></div>
+          </div>
+        </div>
+        <div class="rv d2">
+          <div class="ab-img" style="margin-bottom:24px">
+            <div class="ab-img-ph"><div class="bi">🏭</div><p style="font-family:var(--FD);letter-spacing:2px;text-transform:uppercase;font-size:13px">Vasai Manufacturing Facility</p></div>
+          </div>
+          <div class="ab-img" style="height:200px">
+            <div class="ab-img-ph"><div class="bi" style="font-size:48px">📋</div><p style="font-family:var(--FD);letter-spacing:2px;text-transform:uppercase;font-size:13px">Factory Production Floor</p></div>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px">
+            <div style="background:var(--orange);padding:24px;text-align:center"><div style="font-family:var(--FD);font-size:44px;font-weight:900;color:var(--white);line-height:1">500+</div><div style="font-family:var(--FD);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.85);margin-top:4px">Happy Clients</div></div>
+            <div style="background:var(--navy-light);border:1px solid var(--border);padding:24px;text-align:center"><div style="font-family:var(--FD);font-size:44px;font-weight:900;color:var(--orange);line-height:1">4.9★</div><div style="font-family:var(--FD);font-size:10px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--steel);margin-top:4px">Google Rating</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications -->
+  <section class="sec" style="background:var(--navy)">
+    <div class="wrap">
+      <div class="sec-hd rv"><div class="tag">Certifications</div><h2>Quality You Can <span class="accent">Trust</span></h2><p>Our manufacturing processes and products are backed by recognized certifications ensuring reliability and performance.</p></div>
+      <div class="cert-grid">
+        <div class="cert-card rv"><span class="ci">®</span><h4>Registered Trademark</h4><p>Certified brand under India's trademark registration, ensuring authenticity.</p></div>
+        <div class="cert-card rv d1"><span class="ci">✅</span><h4>Quality Assured</h4><p>Strict quality control in design, manufacturing, installation and supply.</p></div>
+        <div class="cert-card rv d2"><span class="ci">🛡</span><h4>Safety Compliant</h4><p>Compliance with industrial safety standards for all product categories.</p></div>
+        <div class="cert-card rv"><span class="ci">⚙️</span><h4>Premium Raw Materials</h4><p>Only premium-grade CRCA steel sheets used in all manufacturing processes.</p></div>
+        <div class="cert-card rv d1"><span class="ci">🔬</span><h4>Product Testing</h4><p>Continuous product testing and innovation before delivery to any client.</p></div>
+        <div class="cert-card rv d2"><span class="ci">🏭</span><h4>In-House Manufacturing</h4><p>Complete manufacturing at our owned Vasai facility — full quality control.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Team -->
+  <section class="sec" style="background:var(--navy-mid)">
+    <div class="wrap">
+      <div class="sec-hd rv"><div class="tag">Our Team</div><h2>The People Behind <span class="accent">Myriad</span></h2><p>A dedicated team of engineers, designers and client-service professionals committed to delivering excellence.</p></div>
+      <div class="team-grid">
+        <div class="team-card rv"><div class="team-av">M</div><h4>Management Team</h4><p>Strategic direction & business development</p></div>
+        <div class="team-card rv d1"><div class="team-av">D</div><h4>Deepti</h4><p>Client Relations & Project Coordination</p></div>
+        <div class="team-card rv d2"><div class="team-av">E</div><h4>Engineering Team</h4><p>CAD Design & Custom Solutions</p></div>
+        <div class="team-card rv d3"><div class="team-av">I</div><h4>Installation Team</h4><p>PAN India Site Execution</p></div>
+      </div>
+    </div>
+  </section>
+  <div class="cta-ban"><div class="wrap"><div class="cta-i rv"><h2>Ready to Work With Us?</h2><p>Get a free consultation and site survey from our expert team anywhere in India.</p><div class="cta-acts"><a onclick="nav('contact')" class="btn btn-white-solid">Get Free Quote →</a><a href="tel:+919769377043" class="btn btn-white-out">📞 Call Now</a></div></div></div></div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     PRODUCTS PAGE
+═══════════════════════════════════════════ -->
+<div id="page-products" class="page">
+  <div class="breadcrumb"><div class="breadcrumb-i"><a onclick="nav('home')">Home</a><span class="sep">›</span><span class="cur" id="prod-breadcrumb">Products</span></div></div>
+  <div class="pg-hero"><div class="wrap pg-hero-i"><div class="tag" id="prod-tag">Our Products</div><h1 id="prod-title">Mobile <span class="accent">Compactors</span></h1><p id="prod-subtitle">High-density movable rack systems that save up to 70% floor space. Available in 5 variants for every industry and application.</p></div></div>
+
+  <!-- Product variants tabs -->
+  <section class="sec" style="background:var(--navy)">
+    <div class="wrap">
+      <div class="industry-tabs" id="prod-tabs">
+        <button class="itab active" onclick="selectProd('compactors',this)">Mobile Compactors</button>
+        <button class="itab" onclick="selectProd('racking',this)">Industrial Racking</button>
+        <button class="itab" onclick="selectProd('almirah',this)">Almirah & Storage</button>
+        <button class="itab" onclick="selectProd('lockers',this)">Storage Lockers</button>
+        <button class="itab" onclick="selectProd('furniture',this)">Office Furniture</button>
+      </div>
+      <div id="prod-content"></div>
+    </div>
+  </section>
+
+  <!-- Industries Served -->
+  <section class="sec" style="background:var(--navy-mid)">
+    <div class="wrap">
+      <div class="sec-hd rv"><div class="tag">Industries Served</div><h2>Built for <span class="accent">Every Industry</span></h2></div>
+      <div class="ind-grid">
+        <div class="ind-card rv"><span class="ii">🏦</span><p>Banking & Finance</p></div>
+        <div class="ind-card rv d1"><span class="ii">🏥</span><p>Healthcare & Hospitals</p></div>
+        <div class="ind-card rv d2"><span class="ii">🏛</span><p>Government & Defence</p></div>
+        <div class="ind-card rv d3"><span class="ii">📚</span><p>Libraries & Education</p></div>
+        <div class="ind-card rv"><span class="ii">🏭</span><p>Manufacturing & Warehouses</p></div>
+        <div class="ind-card rv d1"><span class="ii">🚂</span><p>Railways & Transport</p></div>
+        <div class="ind-card rv d2"><span class="ii">🏢</span><p>Corporate Offices</p></div>
+        <div class="ind-card rv d3"><span class="ii">🔬</span><p>Research & Labs</p></div>
+      </div>
+    </div>
+  </section>
+  <div class="cta-ban"><div class="wrap"><div class="cta-i rv"><h2>Get a Custom Quote<br>for Your Project</h2><p>Tell us your space and storage needs — we'll engineer the perfect solution.</p><div class="cta-acts"><a onclick="nav('contact')" class="btn btn-white-solid">Start Your Project →</a></div></div></div></div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     CASE STUDIES PAGE
+═══════════════════════════════════════════ -->
+<div id="page-casestudy" class="page">
+  <div class="breadcrumb"><div class="breadcrumb-i"><a onclick="nav('home')">Home</a><span class="sep">›</span><span class="cur">Case Studies</span></div></div>
+  <div class="pg-hero"><div class="wrap pg-hero-i"><div class="tag">Proven Results</div><h1>Real Storage Solutions.<br><span class="accent">Measurable Results.</span></h1><p>See how Myriad's storage systems have transformed space utilization for organizations across India.</p></div></div>
+
+  <section class="sec" style="background:var(--navy)">
+    <div class="wrap">
+      <div class="cs-grid">
+        <div class="cs-card rv">
+          <div class="cs-img"><div class="cs-img-ph"><div class="ci">📦</div><p>Tata Projects · Barmer, Rajasthan</p></div></div>
+          <div class="cs-body">
+            <span class="cs-tag">Archive Storage</span>
+            <h3>Tata Projects Ltd — Archive Storage Installation</h3>
+            <p>Tata Projects Ltd at their Barmer, Rajasthan site required a large-scale archive storage solution to manage growing documentation from an ongoing infrastructure project. Myriad deployed a custom file compactor system across multiple rooms.</p>
+            <div class="cs-meta">
+              <span class="cs-mt"><span>📍</span> Barmer, Rajasthan</span>
+              <span class="cs-mt"><span>🏢</span> Tata Projects Ltd</span>
+              <span class="cs-mt"><span>🗂</span> File Compactors</span>
+            </div>
+            <div class="cs-result">
+              <div class="cs-res-item"><div class="rn">65%</div><div class="rl">Space Saved</div></div>
+              <div class="cs-res-item"><div class="rn">3x</div><div class="rl">Storage Capacity</div></div>
+              <div class="cs-res-item"><div class="rn">7 days</div><div class="rl">Installation Time</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-card rv d1">
+          <div class="cs-img"><div class="cs-img-ph"><div class="ci">🎓</div><p>Vikrant University · Gwalior, MP</p></div></div>
+          <div class="cs-body">
+            <span class="cs-tag">University Records</span>
+            <h3>Vikrant University — Record Storage System</h3>
+            <p>Vikrant University, Gwalior faced a growing challenge managing academic records, examination files, and administrative documents. Myriad provided a custom mobile compactor system designed for the university's specific room dimensions.</p>
+            <div class="cs-meta">
+              <span class="cs-mt"><span>📍</span> Gwalior, Madhya Pradesh</span>
+              <span class="cs-mt"><span>🏛</span> Vikrant University</span>
+            </div>
+            <div class="cs-result">
+              <div class="cs-res-item"><div class="rn">70%</div><div class="rl">Space Saved</div></div>
+              <div class="cs-res-item"><div class="rn">5x</div><div class="rl">File Capacity</div></div>
+              <div class="cs-res-item"><div class="rn">5 days</div><div class="rl">Installation</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-card rv">
+          <div class="cs-img"><div class="cs-img-ph"><div class="ci">⚡</div><p>V.S. Lignite Power · Rajasthan</p></div></div>
+          <div class="cs-body">
+            <span class="cs-tag">Document Management</span>
+            <h3>V.S. Lignite Power — Document Storage Transformation</h3>
+            <p>V.S. Lignite Power Pvt. Ltd. required a robust document storage solution for their Rajasthan power plant. Compliance documentation, technical manuals, and legal records needed organized and accessible storage across multiple departments.</p>
+            <div class="cs-meta">
+              <span class="cs-mt"><span>📍</span> Rajasthan</span>
+              <span class="cs-mt"><span>⚡</span> Power Sector</span>
+            </div>
+            <div class="cs-result">
+              <div class="cs-res-item"><div class="rn">60%</div><div class="rl">Space Saved</div></div>
+              <div class="cs-res-item"><div class="rn">4x</div><div class="rl">Capacity Gain</div></div>
+              <div class="cs-res-item"><div class="rn">6 days</div><div class="rl">Installation</div></div>
+            </div>
+          </div>
+        </div>
+        <div class="cs-card rv d1">
+          <div class="cs-img"><div class="cs-img-ph"><div class="ci">📚</div><p>Madras Christian College · Chennai</p></div></div>
+          <div class="cs-body">
+            <span class="cs-tag">Library & Archive</span>
+            <h3>Madras Christian College — Archive Storage Solution</h3>
+            <p>Madras Christian College, Chennai had a storage room increasingly crowded with years of books, files, and documents. The challenge was to create structured, accessible storage within the same footprint. Myriad installed a library compactor system delivering dramatic results.</p>
+            <div class="cs-meta">
+              <span class="cs-mt"><span>📍</span> Chennai, Tamil Nadu</span>
+              <span class="cs-mt"><span>📚</span> Library Compactors</span>
+            </div>
+            <div class="cs-result">
+              <div class="cs-res-item"><div class="rn">68%</div><div class="rl">Space Saved</div></div>
+              <div class="cs-res-item"><div class="rn">3.5x</div><div class="rl">Book Capacity</div></div>
+              <div class="cs-res-item"><div class="rn">4 days</div><div class="rl">Installation</div></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <div class="cta-ban"><div class="wrap"><div class="cta-i rv"><h2>Your Project Could Be<br>Our Next Case Study</h2><p>Join 500+ organizations that have transformed their storage with Myriad.</p><div class="cta-acts"><a onclick="nav('contact')" class="btn btn-white-solid">Discuss Your Project →</a></div></div></div></div>
+</div>
+
+<!-- ══════════════════════════════════════════
+     CLIENTS PAGE
+═══════════════════════════════════════════ -->
+<div id="page-clients" class="page">
+  <div class="breadcrumb"><div class="breadcrumb-i"><a onclick="nav('home')">Home</a><span class="sep">›</span><span class="cur">Our Clients</span></div></div>
+  <div class="pg-hero"><div class="wrap pg-hero-i"><div class="tag">Our Clients</div><h1>Trusted by <span class="accent">500+ Organizations</span></h1><p>From India's top government agencies to Fortune 500 companies, hospitals, universities and defence establishments — Myriad delivers where reliability is non-negotiable.</p></div></div>
+  
+  <section class="sec" style="background:var(--navy)">
+    <div class="wrap">
+      <div class="sec-hd rv"><div class="tag">Client Portfolio</div><h2>Across <span class="accent">Every Sector</span></h2></div>
+      <div class="industry-tabs">
+        <button class="itab active" onclick="filterClients('all',this)">All Clients</button>
+        <button class="itab" onclick="filterClients('govt',this)">Govt & Defence</button>
+        <button class="itab" onclick="filterClients('corporate',this)">Corporate</button>
+        <button class="itab" onclick="filterClients('education',this)">Education</button>
+        <button class="itab" onclick="filterClients('healthcare',this)">Healthcare</button>
+      </div>
+      <div class="clients-full-grid" id="clients-grid">
+        <!-- populated by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonial highlight -->
+  <section class="sec" style="background:var(--navy-mid)">
+    <div class="wrap">
+      <div class="sec-hd rv"><div class="tag">What Clients Say</div><h2><span class="accent">4.9★</span> Average Rating</h2></div>
+      <div class="rev-grid">
+        <div class="rcard rv"><div class="stars">★★★★★</div><p class="rtext">We thank Myriad for the excellent compactors and shelving solutions provided to our university. The quality is highly impressive — sturdy, smooth functionality, and efficient space utilization.</p><div class="reviewer"><div class="rav">R</div><div><div class="rname">Rakesh Rathore</div><div class="rmeta">University Administration</div></div></div></div>
+        <div class="rcard rv d1"><div class="stars">★★★★★</div><p class="rtext">Extremely pleased with the service. Professional, high-quality work completed in a timely manner. Ms. Deepti's dedication and quick response throughout the process was invaluable.</p><div class="reviewer"><div class="rav">S</div><div><div class="rname">Sharad Patil</div><div class="rmeta">Project Director</div></div></div></div>
+        <div class="rcard rv d2"><div class="stars">★★★★★</div><p class="rtext">The product is amazing and perfectly serves the purpose. The requirement was well understood on call and a customized design offered in no time. Highly recommend.</p><div class="reviewer"><div class="rav">A</div><div><div class="rname">Anupam Savale</div><div class="rmeta">Business Owner</div></div></div></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════════
+     CERTIFICATIONS PAGE
+═══════════════════════════════════════════ -->
+<div id="page-certifications" class="page">
+  <div class="breadcrumb"><div class="breadcrumb-i"><a onclick="nav('home')">Home</a><span class="sep">›</span><a onclick="nav('about')">About Us</a><span class="sep">›</span><span class="cur">Certifications</span></div></div>
+  <div class="pg-hero"><div class="wrap pg-hero-i"><div class="tag">Quality Standards</div><h1>Our Certifications<br>& <span class="accent">Quality Assurance</span></h1><p>At Myriad, quality is not just a commitment — it is a certified standard. Our manufacturing processes are backed by recognized certifications ensuring reliability and safety.</p></div></div>
+  <section class="sec" style="background:var(--navy)">
+    <div class="wrap">
+      <div class="cert-grid" style="grid-template-columns:repeat(3,1fr);gap:24px">
+        <div class="cert-card rv" style="padding:40px 28px"><span class="ci" style="font-size:56px">®</span><h4>Registered Trademark</h4><p>Myriad is a certified registered trademark under India's Intellectual Property Office, confirming brand authenticity and legal standing.</p></div>
+        <div class="cert-card rv d1" style="padding:40px 28px"><span class="ci" style="font-size:56px">✅</span><h4>Quality Assured Manufacturing</h4><p>All manufacturing follows strict quality control protocols from raw material procurement to final product testing and dispatch.</p></div>
+        <div class="cert-card rv d2" style="padding:40px 28px"><span class="ci" style="font-size:56px">🛡</span><h4>Industrial Safety Compliance</h4><p>Full compliance with Indian industrial safety standards in product design, load ratings, and installation procedures.</p></div>
+        <div class="cert-card rv" style="padding:40px 28px"><span class="ci" style="font-size:56px">⭐</span><h4>Premium Grade Materials</h4><p>Only CRCA steel sheets and certified hardware components are used — verified with supplier quality certificates.</p></div>
+        <div class="cert-card rv d1" style="padding:40px 28px"><span class="ci" style="font-size:56px">🔬</span><h4>Continuous Testing</h4><p>Products undergo regular load testing, operational testing, and durability validation before delivery to clients.</p></div>
+        <div class="cert-card rv d2" style="padding:40px 28px"><span class="ci" style="font-size:56px">🏆</span><h4>Client Verified Quality</h4><p>91 Google Reviews with a 4.9-star average rating — the strongest real-world certification of our quality commitment.</p></div>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════════
+     CONTACT PAGE
+═══════════════════════════════════════════ -->
+<div id="page-contact" class="page">
+  <div class="breadcrumb"><div class="breadcrumb-i"><a onclick="nav('home')">Home</a><span class="sep">›</span><span class="cur">Contact Us</span></div></div>
+  <div class="pg-hero"><div class="wrap pg-hero-i"><div class="tag">Get In Touch</div><h1>Let's Build Your<br><span class="accent">Storage Solution</span></h1><p>Reach out for a free consultation, customized quote, or site survey. Our team typically responds within 2–4 hours on business days.</p></div></div>
+  
+  <section class="sec" style="background:var(--navy)">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="rv">
+          <h3>Talk to Our Storage Experts</h3>
+          <p>Whether you need a single compactor or a full-facility storage solution across multiple locations — our team is ready to help you plan, design, and deliver.</p>
+          <div class="c-item"><div class="ico">📞</div><div class="c-item-text"><h4>Phone</h4><a href="tel:+919769377043">+91 97693 77043</a></div></div>
+          <div class="c-item"><div class="ico">✉️</div><div class="c-item-text"><h4>Email</h4><a href="mailto:info@myriadstoragesystem.com">info@myriadstoragesystem.com</a></div></div>
+          <div class="c-item"><div class="ico">💬</div><div class="c-item-text"><h4>WhatsApp</h4><a href="https://wa.me/919769377043" target="_blank">Chat on WhatsApp</a></div></div>
+          <div style="margin-top:32px">
+            <div class="offices-grid">
+              <div class="office-card"><h4>🏢 Sales Office</h4><p>Jogeshwari, Mumbai<br>Maharashtra 400102<br><a href="https://maps.app.goo.gl/f3eyCGJZBGMnTWSv8" target="_blank" style="color:var(--orange);font-size:13px;text-decoration:none">View on Google Maps →</a></p></div>
+              <div class="office-card"><h4>🏭 Manufacturing</h4><p>Gala No.5, Vakan Compound<br>Vasai Phata, Vasai (E)<br>Palghar 401208</p></div>
+            </div>
+          </div>
+          <div style="background:var(--card);border:1px solid var(--border);padding:24px;margin-top:24px">
+            <div style="font-family:var(--FD);font-size:12px;font-weight:700;letter-spacing:3px;text-transform:uppercase;color:var(--steel);margin-bottom:16px">Business Hours</div>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px">
+              <div style="font-size:14px;color:var(--dim)">Monday – Saturday</div><div style="font-size:14px;color:var(--white)">9:00 AM – 6:30 PM</div>
+              <div style="font-size:14px;color:var(--dim)">Sunday</div><div style="font-size:14px;color:var(--steel)">Closed</div>
+            </div>
+          </div>
+        </div>
+        <div class="rv d2">
+          <div class="contact-form">
+            <h3>Request Free Quote</h3>
+            <p>Fill in the details below and we'll get back to you within 24 hours with a detailed proposal.</p>
+            <div class="fg-2">
+              <div class="fg"><input type="text" placeholder="First Name *"></div>
+              <div class="fg"><input type="text" placeholder="Last Name *"></div>
+            </div>
+            <div class="fg"><input type="email" placeholder="Email Address *"></div>
+            <div class="fg"><input type="tel" placeholder="Phone Number *"></div>
+            <div class="fg"><input type="text" placeholder="Company / Organization Name"></div>
+            <div class="fg"><input type="text" placeholder="City / Location of Installation *"></div>
+            <div class="fg">
+              <select>
+                <option value="" disabled selected>Product Category *</option>
+                <option>Mobile Compactor Storage</option>
+                <option>Industrial Racking</option>
+                <option>Almirah & Storage Units</option>
+                <option>Storage Lockers</option>
+                <option>Office Furniture</option>
+                <option>Custom / Multiple Products</option>
+              </select>
+            </div>
+            <div class="fg">
+              <select>
+                <option value="" disabled selected>Approximate Budget Range</option>
+                <option>Below ₹1 Lakh</option>
+                <option>₹1 – 5 Lakhs</option>
+                <option>₹5 – 15 Lakhs</option>
+                <option>₹15 – 50 Lakhs</option>
+                <option>Above ₹50 Lakhs</option>
+              </select>
+            </div>
+            <div class="fg"><textarea placeholder="Describe your storage requirement, room dimensions, number of units needed..."></textarea></div>
+            <div class="fg" style="display:flex;align-items:flex-start;gap:10px"><input type="checkbox" style="width:auto;margin-top:3px;flex-shrink:0"><label style="font-size:13px;color:var(--dim)">I agree to be contacted by Myriad Storage System regarding my enquiry.</label></div>
+            <button class="fsub" onclick="alert('Thank you! Our team will contact you within 24 hours with a customized quote.')">Submit Enquiry →</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Map placeholder -->
+  <section style="background:var(--navy-mid);padding:0">
+    <div class="map-wrap"><p>📍 Interactive Map — Embed Google Maps Here</p></div>
+  </section>
+</div>
+
+<!-- ══════════════════════════════════════════
+     SHARED FOOTER
+═══════════════════════════════════════════ -->
+<footer>
+  <div class="wrap">
+    <div class="ft-grid">
+      <div class="ft-brand">
+        <a class="logo" onclick="nav('home')" style="display:inline-block;margin-bottom:4px">MYRIAD<span class="dot">.</span></a>
+        <p>Mumbai's leading manufacturer of mobile compactor storage systems and industrial storage solutions since 2018. Serving 500+ clients across India with custom-engineered space-saving solutions.</p>
+        <div style="font-family:var(--FD);font-size:11px;font-weight:600;letter-spacing:2px;text-transform:uppercase;color:var(--steel);margin-bottom:12px">GST: 27ABJFM5468N1ZG</div>
+        <div class="ft-social">
+          <a href="https://www.facebook.com/MyriadStorageSystem" class="fsoc" target="_blank">f</a>
+          <a href="https://twitter.com/myriadsystem" class="fsoc" target="_blank">𝕏</a>
+          <a href="https://www.instagram.com/myriadstoragesystemllp" class="fsoc" target="_blank">in</a>
+          <a href="https://www.linkedin.com/company/myriadstorage" class="fsoc" target="_blank">Li</a>
+          <a href="https://www.youtube.com/channel/UCd1zQ3t-QJb3TTaPNPaCcHg" class="fsoc" target="_blank">▶</a>
+        </div>
+      </div>
+      <div class="ft-col">
+        <h4>Products</h4>
+        <ul>
+          <li><a onclick="navProduct('compactors')">Mobile Compactors</a></li>
+          <li><a onclick="navProduct('racking')">Industrial Racking</a></li>
+          <li><a onclick="navProduct('almirah')">Almirah & Storage</a></li>
+          <li><a onclick="navProduct('lockers')">Storage Lockers</a></li>
+          <li><a onclick="navProduct('furniture')">Office Furniture</a></li>
+          <li><a onclick="nav('contact')">Custom Solutions</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Company</h4>
+        <ul>
+          <li><a onclick="nav('about')">About Us</a></li>
+          <li><a onclick="nav('certifications')">Our Certifications</a></li>
+          <li><a onclick="nav('clients')">Our Clients</a></li>
+          <li><a onclick="nav('casestudy')">Case Studies</a></li>
+          <li><a onclick="nav('contact')">Contact Us</a></li>
+        </ul>
+      </div>
+      <div class="ft-col">
+        <h4>Contact</h4>
+        <div class="ft-ci"><span class="ico">📞</span><a href="tel:+919769377043">+91 97693 77043</a></div>
+        <div class="ft-ci"><span class="ico">✉️</span><a href="mailto:info@myriadstoragesystem.com">info@myriadstoragesystem.com</a></div>
+        <div class="ft-ci"><span class="ico">🏢</span><span>Jogeshwari, Mumbai 400102</span></div>
+        <div class="ft-ci"><span class="ico">🏭</span><span>Vasai Phata, Palghar 401208</span></div>
+      </div>
+    </div>
+    <div class="ft-btm">
+      <p>© 2025 Myriad Storage System LLP. All rights reserved.</p>
+      <div class="gst">India's Trusted Storage Manufacturer Since 2018</div>
+      <p>Made with ♦ for Myriad</p>
+    </div>
+  </div>
+</footer>
+
+<!-- WHATSAPP -->
+<div class="wa">
+  <div class="wa-lbl" id="wa-lbl">Chat on WhatsApp</div>
+  <a href="https://wa.me/919769377043?text=Hello%2C%20I%20am%20interested%20in%20your%20storage%20solutions." target="_blank" class="wa-btn">
+    <svg width="28" height="28" viewBox="0 0 30 30" fill="white"><path d="M15 2C7.82 2 2 7.82 2 15c0 2.26.6 4.38 1.64 6.22L2 28l6.94-1.61A12.93 12.93 0 0015 28c7.18 0 13-5.82 13-13S22.18 2 15 2zm6.44 18.56c-.26.73-1.53 1.4-2.1 1.49-.57.09-1.27.13-2.05-.13-.47-.15-1.07-.35-1.84-.69-3.23-1.4-5.34-4.66-5.5-4.87-.16-.22-1.3-1.73-1.3-3.3 0-1.57.82-2.35 1.12-2.67.29-.32.63-.4.84-.4.21 0 .42.002.6.01.2.01.46-.07.72.55.26.63.9 2.19.98 2.35.08.16.13.35.03.56-.1.21-.15.34-.3.52-.16.18-.33.4-.47.54-.16.16-.32.33-.14.64.18.32.82 1.35 1.75 2.19 1.2 1.07 2.2 1.4 2.52 1.56.32.16.51.13.7-.08.18-.21.78-.91 1-1.22.2-.32.4-.26.67-.16.28.1 1.77.83 2.07.99.3.16.5.24.57.38.07.13.07.78-.2 1.53z"/></svg>
+  </a>
+</div>
+
+<script>
+/* ─── PRODUCT DATA ─── */
+const PRODUCTS = {
+  compactors: {
+    tag:'Mobile Compactors', title:'Mobile <span class="accent">Compactor</span> Storage', subtitle:'High-density movable rack systems saving up to 70% floor space. Custom-built in 5 variants for every application.',
+    variants:[
+      {icon:'🏋',name:'Heavy-Duty Compactors',desc:'Engineered for industrial applications — high load capacity for warehouses, manufacturing units, and bulk storage.'},
+      {icon:'🗂',name:'File Compactors',desc:'Specifically designed for storing files, records and documents in corporate offices, government institutions, and archives.'},
+      {icon:'📖',name:'Library Compactors',desc:'Optimised for books, journals and library materials — smooth operation with precise spacing for all formats.'},
+      {icon:'👆',name:'Manual Push-Pull',desc:'Simple, low-maintenance systems ideal for smaller offices and institutions requiring no mechanical components.'},
+      {icon:'⚡',name:'Perforated Storage',desc:'Enhanced ventilation and visibility for materials requiring airflow — widely used in industrial environments.'},
+    ],
+    specs:[['Material','CRCA Steel Sheets'],['Load Capacity','Custom — up to 5 Tonnes'],['Space Saving','Up to 60–70%'],['Operation','Manual or Mechanical'],['Surface','Powder Coated'],['Colors','Custom as per requirement'],['Rails','Ball-bearing smooth operation'],['Warranty','1 Year Material Defects']],
+    apps:['Banks & Financial Institutions','Hospitals & Healthcare','Government Offices','Defence & Railways','Libraries & Universities','Corporate Archives']
+  },
+  racking: {
+    tag:'Industrial Racking', title:'Industrial <span class="accent">Racking</span> Systems', subtitle:'Heavy-duty storage racking for warehouses, factories and distribution centres across India.',
+    variants:[
+      {icon:'🏗',name:'Heavy-Duty Racks',desc:'Robust pallet and shelf racking systems for high-load warehouses, factories and bulk storage environments.'},
+      {icon:'📦',name:'Pallet Racking',desc:'Standard and wide-aisle pallet racking for efficient forklift-operated warehouse storage.'},
+      {icon:'🏢',name:'Mezzanine Systems',desc:'Multi-level mezzanine storage structures maximising vertical space in warehouses and industrial units.'},
+    ],
+    specs:[['Material','Mild Steel (MS)'],['Surface','Powder Coated'],['Load Per Level','Custom — up to 2 Tonnes'],['Height','Up to 10 metres'],['Beam Type','Box section / C-section'],['Colours','Standard RAL palette'],['Assembly','Bolt-free / Clip-in systems'],['Delivery','PAN India']],
+    apps:['Warehouses','Manufacturing Units','Distribution Centres','Cold Storage Facilities','E-commerce Fulfilment','Automotive Sector']
+  },
+  almirah: {
+    tag:'Almirah & Storage', title:'Almirah & <span class="accent">Storage Units</span>', subtitle:'Powder-coated metal almirahs for secure, organized storage in offices and institutional spaces.',
+    variants:[
+      {icon:'🚪',name:'Glass Door Almirah',desc:'Elegant glass-door units for display and organized document storage in offices and reception areas.'},
+      {icon:'📂',name:'Storewell Almirah',desc:'Multi-shelf closed almirahs for general file, document and equipment storage in offices and stores.'},
+      {icon:'📐',name:'Custom Storage Units',desc:'Bespoke dimensions and configurations designed around your specific storage requirements.'},
+    ],
+    specs:[['Material','CRCA Steel'],['Surface','Powder Coated'],['Door Type','Glass / Solid Steel'],['Shelves','Adjustable height'],['Lock','3-point locking system'],['Colors','Custom RAL colors'],['Size','As per customer requirement'],['Warranty','1 Year']],
+    apps:['Corporate Offices','Government Institutions','Educational Institutions','Healthcare Facilities','Retail & Showrooms','Residential']
+  },
+  lockers: {
+    tag:'Storage Lockers', title:'Industrial <span class="accent">Storage Lockers</span>', subtitle:'Secure, multi-compartment lockers for staff, industrial facilities, gyms and institutions.',
+    variants:[
+      {icon:'🏭',name:'Industrial Lockers',desc:'Heavy-duty lockers for manufacturing facilities, tool storage and industrial environments.'},
+      {icon:'👔',name:'Staff Lockers',desc:'Multi-compartment staff lockers for corporate offices, institutions and commercial spaces.'},
+      {icon:'🏋',name:'Gym Lockers',desc:'Ventilated lockers with padlock provision for gyms, sports facilities and recreational centres.'},
+      {icon:'📱',name:'Mobile / Phone Lockers',desc:'Compact individual compartment lockers for mobile phones and small valuables in offices and factories.'},
+    ],
+    specs:[['Material','CRCA Steel'],['Compartments','1 to 12 per unit'],['Surface','Powder Coated'],['Lock Type','Hasp & Staple / Key / Digital'],['Ventilation','Perforated door options'],['Size','Custom dimensions'],['Colours','Custom RAL palette'],['Warranty','1 Year']],
+    apps:['Corporate Offices','Manufacturing Plants','Gyms & Fitness Centres','Schools & Colleges','Hospitals & Clinics','Retail & Warehouses']
+  },
+  furniture: {
+    tag:'Office Furniture', title:'Office <span class="accent">Furniture</span> & Lab Solutions', subtitle:'Ergonomic, modular office furniture systems for modern workspaces, executive offices and laboratories.',
+    variants:[
+      {icon:'💼',name:'Modular Workstations',desc:'Flexible, space-efficient modular workstation systems for open-plan and cubicle office environments.'},
+      {icon:'👔',name:'Executive Tables',desc:'Premium executive desks with cable management and modesty panels for senior management offices.'},
+      {icon:'🤝',name:'Conference Tables',desc:'Large-format conference and boardroom tables for professional meeting spaces.'},
+      {icon:'🔬',name:'Lab Furniture',desc:'Specialized laboratory tables, storage and workbenches for research and testing facilities.'},
+      {icon:'🪑',name:'Chairs & Accessories',desc:'Ergonomic seating and office accessories to complete your workspace solution.'},
+    ],
+    specs:[['Material','Steel / Wood / Laminate'],['Surface','Powder Coated / PU'],['Design','Modular / Customizable'],['Cable Mgmt','Built-in provision'],['Colors','Custom finish options'],['Assembly','Professional installation'],['Warranty','1 Year'],['MOQ','No minimum order']],
+    apps:['Corporate Offices','Co-working Spaces','Government Offices','Research Laboratories','Educational Institutions','Industrial Control Rooms']
+  }
+};
+
+/* ─── CLIENT DATA ─── */
+const CLIENTS_DATA = [
+  {name:'ISRO',sector:'govt',full:'Indian Space Research Org.',initial:'IS'},
+  {name:'Tata Group',sector:'corporate',full:'Tata Projects Ltd.',initial:'T'},
+  {name:'SBI',sector:'corporate',full:'State Bank of India',initial:'SB'},
+  {name:'L&T',sector:'corporate',full:'Larsen & Toubro',initial:'LT'},
+  {name:'JSW Steel',sector:'corporate',full:'JSW Steel Ltd.',initial:'JS'},
+  {name:'BEL',sector:'govt',full:'Bharat Electronics Ltd.',initial:'BE'},
+  {name:'MMRC',sector:'govt',full:'Mumbai Metro Rail Corp.',initial:'MM'},
+  {name:'Hikvision',sector:'corporate',full:'Hikvision India',initial:'HK'},
+  {name:'TVS',sector:'corporate',full:'TVS Group',initial:'TV'},
+  {name:'ISKCON',sector:'govt',full:'ISKCON',initial:'IK'},
+  {name:'Waaree',sector:'corporate',full:'Waaree Energies',initial:'WA'},
+  {name:'HP',sector:'corporate',full:'HP India',initial:'HP'},
+  {name:'DY Patil',sector:'education',full:'DY Patil University',initial:'DY'},
+  {name:'Murugappa',sector:'corporate',full:'Murugappa Group',initial:'MU'},
+  {name:'V-Guard',sector:'corporate',full:'V-Guard Industries',initial:'VG'},
+  {name:'Woxsen Univ.',sector:'education',full:'Woxsen University',initial:'WX'},
+  {name:'Vikrant Univ.',sector:'education',full:'Vikrant University, Gwalior',initial:'VI'},
+  {name:'CIDCO',sector:'govt',full:'City Industrial Dev. Corp.',initial:'CI'},
+  {name:'Aeroflex',sector:'corporate',full:'Aeroflex Industries',initial:'AF'},
+  {name:'Smita Memorial',sector:'healthcare',full:'Smita Memorial Hospital',initial:'SM'},
+  {name:'MCC',sector:'education',full:'Madras Christian College',initial:'MC'},
+  {name:'Biostadt',sector:'healthcare',full:'Biostadt India',initial:'BI'},
+  {name:'Wadia Group',sector:'corporate',full:'The Wadia Group',initial:'WD'},
+  {name:'Chryso',sector:'corporate',full:'Chryso Saint-Gobain',initial:'CH'},
+  {name:'Vibgyor',sector:'education',full:'Vibgyor Schools',initial:'VB'},
+];
+
+/* ─── ROUTER ─── */
+let currentPage = 'home';
+function nav(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  // Nav highlight
+  document.querySelectorAll('.nav-links a').forEach(a => a.classList.remove('active'));
+  const nl = document.getElementById('nl-' + page);
+  if(nl) nl.classList.add('active');
+  window.scrollTo({top:0, behavior:'smooth'});
+  currentPage = page;
+  initReveal();
+  if(page === 'home') initCounters();
+  if(page === 'clients') renderClients('all');
+}
+function navProduct(type) {
+  nav('products');
+  setTimeout(() => {
+    selectProd(type, document.querySelector('#prod-tabs .itab'));
+    // reset tab active
+    document.querySelectorAll('#prod-tabs .itab').forEach((t,i) => {
+      const types = ['compactors','racking','almirah','lockers','furniture'];
+      t.classList.toggle('active', types[i] === type);
+    });
+  }, 100);
+}
+
+/* ─── PRODUCT CONTENT RENDER ─── */
+function selectProd(type, btn) {
+  document.querySelectorAll('#prod-tabs .itab').forEach(t => t.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  const p = PRODUCTS[type];
+  document.getElementById('prod-breadcrumb').textContent = p.tag;
+  document.getElementById('prod-tag').textContent = p.tag;
+  document.getElementById('prod-title').innerHTML = p.title;
+  document.getElementById('prod-subtitle').textContent = p.subtitle;
+  const c = document.getElementById('prod-content');
+  c.innerHTML = `
+    <div class="prod-detail-grid rv vis" style="margin-bottom:48px">
+      <div>
+        <div class="prod-img"><div class="pi-ph"><div class="big">${p.variants[0].icon}</div><p style="font-family:var(--FD);letter-spacing:2px;text-transform:uppercase;font-size:12px;color:var(--dim)">${p.tag}</p></div></div>
+      </div>
+      <div class="prod-info">
+        <div class="tag">${p.tag}</div>
+        <h2>${p.title}</h2>
+        <p>${p.subtitle}</p>
+        <div class="prod-apps">${p.apps.map(a=>`<span class="app-tag">${a}</span>`).join('')}</div>
+        <div class="prod-spec">
+          ${p.specs.map(([k,v])=>`<div class="spec-row"><div class="sk">${k}</div><div class="sv">${v}</div></div>`).join('')}
+        </div>
+        <div style="margin-top:24px;display:flex;gap:12px;flex-wrap:wrap">
+          <a onclick="nav('contact')" class="btn btn-orange">Get a Quote →</a>
+          <a href="tel:+919769377043" class="btn btn-outline">📞 Call Now</a>
+        </div>
+      </div>
+    </div>
+    <div class="sec-hd" style="text-align:left;margin-bottom:24px"><div class="tag">Variants</div><h2 style="font-size:clamp(26px,3vw,40px)">Available <span class="accent">Types</span></h2></div>
+    <div class="variants-grid">
+      ${p.variants.map(v=>`<div class="var-card"><span class="vi">${v.icon}</span><h4>${v.name}</h4><p style="font-size:12px;color:var(--dim);margin-top:8px;line-height:1.5">${v.desc}</p></div>`).join('')}
+    </div>
+  `;
+}
+
+/* ─── CLIENTS RENDER ─── */
+function renderClients(filter) {
+  const g = document.getElementById('clients-grid');
+  if(!g) return;
+  const filtered = filter === 'all' ? CLIENTS_DATA : CLIENTS_DATA.filter(c => c.sector === filter);
+  g.innerHTML = filtered.map(c => `
+    <div class="cl-card ${['ISRO','Tata Group','SBI','L&T'].includes(c.name)?'cl-highlight':''}">
+      <div class="cla">${c.initial}</div>
+      <h4>${c.name}</h4>
+      <p>${c.full}</p>
+    </div>
+  `).join('');
+}
+function filterClients(filter, btn) {
+  document.querySelectorAll('.industry-tabs .itab').forEach(t => t.classList.remove('active'));
+  if(btn) btn.classList.add('active');
+  renderClients(filter);
+}
+
+/* ─── SCROLL REVEAL ─── */
+function initReveal() {
+  setTimeout(() => {
+    const rvs = document.querySelectorAll('.page.active .rv');
+    const obs = new IntersectionObserver(entries => {
+      entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('vis'); obs.unobserve(e.target); } });
+    }, { threshold:0.08, rootMargin:'0px 0px -30px 0px' });
+    rvs.forEach(r => { if(!r.classList.contains('vis')) obs.observe(r); });
+  }, 100);
+}
+
+/* ─── COUNTERS ─── */
+let countersRan = false;
+function initCounters() {
+  if(countersRan) return;
+  const stats = document.querySelector('.stats');
+  if(!stats) return;
+  const obs = new IntersectionObserver(entries => {
+    if(entries[0].isIntersecting) {
+      document.querySelectorAll('[data-target]').forEach(el => {
+        const target = +el.dataset.target;
+        let cur = 0;
+        const step = target / (1800/16);
+        const t = setInterval(() => {
+          cur = Math.min(cur + step, target);
+          el.textContent = Math.floor(cur) + '+';
+          if(cur >= target) clearInterval(t);
+        }, 16);
+      });
+      countersRan = true;
+      obs.disconnect();
+    }
+  }, { threshold:0.3 });
+  obs.observe(stats);
+}
+
+/* ─── FAQ ─── */
+document.addEventListener('click', e => {
+  const q = e.target.closest('.faq-q');
+  if(q) {
+    const item = q.closest('.faq-item');
+    item.classList.toggle('open');
+  }
+});
+
+/* ─── NAV SCROLL ─── */
+window.addEventListener('scroll', () => {
+  document.getElementById('mainNav').classList.toggle('scrolled', scrollY > 40);
+});
+
+/* ─── BURGER ─── */
+function toggleBurger() {
+  document.getElementById('burger').classList.toggle('open');
+  document.getElementById('mobMenu').classList.toggle('open');
+}
+
+/* ─── WA LABEL ─── */
+setTimeout(() => { const l = document.getElementById('wa-lbl'); if(l) l.style.opacity = '0'; }, 4000);
+
+/* ─── INIT ─── */
+selectProd('compactors', null);
+initReveal();
+initCounters();
+</script>
+</body>
+</html>
